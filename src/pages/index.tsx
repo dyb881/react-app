@@ -1,5 +1,5 @@
 import React from 'react';
-import routers from 'configs/routers';
+import routers from 'config/routers';
 import Router from '@dyb881/router';
 import '@dyb881/router/lib/style.css';
 

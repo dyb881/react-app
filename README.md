@@ -28,6 +28,24 @@ git clone https://github.com/dyb881/react-app [项目名称]
 - 路由准备，并设置过度动画
 - 请求配置，以及默认请求器（可替换）
 
+## 目录结构
+
+- src - 源代码，开发项目过程中，一般只会动这里的代码
+  - api - 请求相关，可直接导出请求函数，以及封装后的接口
+    - request.ts - 配置导出请求方法
+    - index.ts - 封装并导出请求接口
+  - components - 全局组件，会被页面复用的组件
+  - config - 全局配置
+    - request.ts - 请求配置
+    - routers.ts - 路由配置
+  - images - 图片资源
+  - pages - 项目页面 - 开发中，以页面为单位的文件夹都存放于此
+  - types - ts 类型定义，以及引用第三方库类型声明
+  - utils - 工具库
+  - App.less - 全局样式定义
+  - App.tsx - 项目入口，主要用于状态的注入，和路由定义
+  - react-app-env.d.ts - 全局声明
+
 ## 搭建过程
 
 虽然以下配置过程都是用 npm，但是实际使用时，推荐 yarn
@@ -382,8 +400,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 #### 基础样式准备
 
-/src/App.less 是全局样式<br>
-在 /src/App.tsx 中引用 normalize.css 和全局样式<br>
+在 /src/App.tsx 中引用 normalize.css 和 /src/App.less 全局样式<br>
 normalize.css 在默认的 HTML 元素样式上提供了跨浏览器的高度一致性<br>
 
 ```
@@ -397,7 +414,7 @@ import 'App.less';
 路由使用 [@dyb881/router](https://github.com/dyb881/router) 组件进行注册<br>
 自带过度动画，强制使用一级路由
 
-#### 请求函数
+#### 请求配置，以及默认请求器
 
 在 /src/configs/request.ts 中配置请求相关信息<br>
 默认使用 [@dyb881/fetch-request](https://github.com/dyb881/fetch-request) 请求器，自带控制台打印信息。<br>

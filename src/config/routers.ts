@@ -8,7 +8,7 @@ const routers: any = {
 };
 
 /**
- * 遍历 require 页面
+ * 遍历并 require 页面
  */
 Object.keys(routers).forEach(i => {
   routers[i] = require('pages/' + routers[i]).default;

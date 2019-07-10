@@ -1,5 +1,5 @@
 import FetchReques, { log } from '@dyb881/fetch-request';
-import { config, successCode } from 'configs/request';
+import { config, successCode } from 'config/request';
 
 /**
  * 请求模块初始化并输出请求方法以及参数
