@@ -322,6 +322,30 @@ module.exports = override(
 主要是设置：移动端禁止缩放、收藏栏图标、手机号码识别禁止、等相关属性设置<br>
 更多详情，请查看文件[/public/index.html](https://github.com/dyb881/react-app/blob/master/public/index.html)
 
+## 知识准备
+
+环境准备好后，你需要知道的东西还有很多<br>
+以下知识点不需要追求完全精通，但是需要大致了解<br>
+
+- web 基础 - [MDN](https://developer.mozilla.org/zh-CN/)，[W3C](http://www.w3school.com.cn/)
+- ES Next - [JavaScript 完整手册](https://juejin.im/post/5bff57fee51d45021a167991)
+- React - [入门教程](http://www.ruanyifeng.com/blog/2015/03/react.html)
+- 路由 react-router-dom - [官方文档](https://reacttraining.com/react-router/web/guides/quick-start)，[中文文档](https://www.jianshu.com/p/b117b437dc5a)
+- 预处理 less/scss/sass - [less 文档](https://www.html.cn/doc/less/)，[scss/sass 文档](http://sass.bootcss.com/docs/sass-reference)，选一即可。
+- 模块化 CSS Modules - [CSS Modules 用法教程](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)
+- 状态管理 Mobx/Redux 二选一，大型项目推荐采用 Redux，中小型项目推荐采用 mobx 降低开发成本
+  - [Mobx 中文文档](https://cn.mobx.js.org)
+  - [Redux 中文文档](http://cn.redux.js.org)
+    - [redux-saga 中文文档](http://leonshi.com/redux-saga-in-chinese/docs/api/index.html)
+- UI 组件 ant-design
+  - [PC 端](https://ant.design/docs/react/introduce-cn)
+  - [移动端](https://mobile.ant.design/docs/react/introduce-cn)
+- 包管理，选一即可
+  - yarn [中文文档](https://yarnpkg.com/zh-Hant)
+  - npm [菜鸟教程](https://www.runoob.com/nodejs/nodejs-npm.html)
+- 打包工具
+  - webpack [中文文档](https://www.webpackjs.com)
+
 ## 致谢
 
 感谢现有的相关项目:
