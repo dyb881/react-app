@@ -5,7 +5,7 @@ import 'normalize.css';
 import 'App.less';
 
 /**
- * 注入层
+ * 状态以及路由注入
  */
 export default () => (
   <Router>

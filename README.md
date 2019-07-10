@@ -2,11 +2,7 @@
 
 create-react-app + react-app-rewired 进行二次配置：按需加载、less-loader、启用 eslint 配置、特殊自定义配置
 
-## 用途
-
-给 create-react-app 做出一个更完善的配置功能，对于 src 内的代码不做出任何建议
-
-## 用法
+## 使用方法
 
 ```
 git clone https://github.com/dyb881/react-app [项目名称]
@@ -14,7 +10,7 @@ git clone https://github.com/dyb881/react-app [项目名称]
 
 ## 拓展功能
 
-除了 create-react-app --typescript 已有的功能外，主要拓展了以下功能：
+除了 create-react-app --typescript 已有的功能外，做出一个更完善的配置功能，以及一些基础准备：
 
 - prettier 格式化配置
 - homepage 打包路径设置
@@ -28,6 +24,8 @@ git clone https://github.com/dyb881/react-app [项目名称]
   - 添加 postcss-pxtorem（注！非默认，需手动清除注释）
 - index.html 默认添加：移动端禁止缩放、收藏栏图标、手机号码识别禁止、等相关属性设置
 - 开发环境下，热更新
+- 基础样式准备
+- 路由准备，并设置过度动画
 
 ## 搭建过程
 
@@ -391,6 +389,12 @@ normalize.css 在默认的 HTML 元素样式上提供了跨浏览器的高度一
 import 'normalize.css';
 import 'App.less';
 ```
+
+#### 路由准备
+
+在 /src/config/routers.ts 中配置页面路由<br>
+路由使用 [@dyb881/router](https://github.com/dyb881/router) 组件进行注册<br>
+自带过度动画，强制使用一级路由
 
 ## 知识准备
 
