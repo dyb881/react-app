@@ -20,13 +20,14 @@ git clone https://github.com/dyb881/react-app [项目名称]
 - homepage 打包路径设置
 - tsconfig.json ts 编译配置
 - antd antd-mobile lodash 三个常用依赖的按需加载
-- less 文件加载
+- less 文件加载，以及主题色设置
 - eslint 可二次配置
 - 可自定义 webpack 配置
   - 默认在生产模式中配置了代码压缩
 - 添加 postcss 插件
   - 添加 postcss-pxtorem（注！非默认，需手动清除注释）
 - index.html 默认添加：移动端禁止缩放、收藏栏图标、手机号码识别禁止、等相关属性设置
+- 开发环境下，热更新
 
 ## 搭建过程
 
@@ -164,6 +165,33 @@ module.exports = override(
   addLessLoader({
     javascriptEnabled: true,
     modifyVars: {}, // 全局 less 变量，会覆盖项目内同名变量，可用于主题定制
+  })
+);
+```
+
+#### less-loader 配置主题色变量
+
+```
+const { override, addLessLoader } = require('customize-cra');
+
+module.exports = override(
+  // 添加 less-loader
+  addLessLoader({
+    javascriptEnabled: true,
+    // 全局 less 变量，会覆盖项目内同名变量，可用于主题定制
+    modifyVars: {
+      '@ra-primary': '#1890ff', // 全局主色
+      '@ra-success': '#52c41a', // 成功色
+      '@ra-warning': ' #faad14', // 警告色
+      '@ra-error': '#f5222d', // 错误色
+      '@ra-font-size': '14px', // 主字号
+      '@ra-color': 'rgba(0, 0, 0, 0.85)', // 主文本色
+      '@ra-color-secondary': 'rgba(0, 0, 0, .45)', // 次文本色
+      '@ra-disabled-color': 'rgba(0, 0, 0, .25)', // 失效色
+      '@ra-disabled-color-back': 'rgba(0, 0, 0, .05)', // 失效背景色
+      '@ra-border-color': '#eeeeee', // 边框色
+      '@ra-border-color-dark': '#cccccc', // 边框色-深色
+    },
   })
 );
 ```
@@ -322,6 +350,48 @@ module.exports = override(
 主要是设置：移动端禁止缩放、收藏栏图标、手机号码识别禁止、等相关属性设置<br>
 更多详情，请查看文件[/public/index.html](https://github.com/dyb881/react-app/blob/master/public/index.html)
 
+### 源码（/src）内做出一些默认设置
+
+#### 添加热更新
+
+安装热更新插件
+
+```
+npm i react-hot-loader
+```
+
+/src/index.tsx
+
+```
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+改为
+
+```
+(async () => {
+  let RenderApp = App;
+  // 开发环境
+  if (process.env.NODE_ENV === 'development') {
+    // 添加热更新
+    const { hot } = await import('react-hot-loader/root');
+    RenderApp = hot(App);
+  }
+  ReactDOM.render(<RenderApp />, document.getElementById('root'));
+})();
+```
+
+#### 基础样式准备
+
+/src/App.less 是全局样式<br>
+在 /src/App.tsx 中引用 normalize.css 和全局样式<br>
+normalize.css 在默认的 HTML 元素样式上提供了跨浏览器的高度一致性<br>
+
+```
+import 'normalize.css';
+import 'App.less';
+```
+
 ## 知识准备
 
 环境准备好后，你需要知道的东西还有很多<br>
@@ -361,3 +431,5 @@ module.exports = override(
 - [less](http://lesscss.org)
 - [less-loader](https://webpack.docschina.org/loaders/less-loader)
 - [webpack-parallel-uglify-plugin](https://github.com/gdborton/webpack-parallel-uglify-plugin)
+- [react-hot-loader](https://github.com/gaearon/react-hot-loader)
+- [normalize.css](https://github.com/necolas/normalize.css)
