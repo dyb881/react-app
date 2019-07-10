@@ -27,6 +27,7 @@ git clone https://github.com/dyb881/react-app [项目名称]
 - 基础样式准备
 - 路由准备，并设置过度动画
 - 请求配置，以及默认请求器（可替换）
+- 快捷服务启动
 
 ## 目录结构
 
@@ -367,6 +368,32 @@ module.exports = override(
 
 主要是设置：移动端禁止缩放、收藏栏图标、手机号码识别禁止、等相关属性设置<br>
 更多详情，请查看文件[/public/index.html](https://github.com/dyb881/react-app/blob/master/public/index.html)
+
+### 添加快捷服务启动
+
+安装依赖
+
+```
+npm i serve
+```
+
+在 package.json 添加一行命令
+
+```
+{
+  "scripts": {
+    ...,
+    "serve": "serve -s build"
+  },
+}
+```
+
+使用时
+
+```
+npm run build
+npm run serve
+```
 
 ### 源码（/src）内做出一些默认设置
 

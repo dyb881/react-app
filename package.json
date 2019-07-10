@@ -26,6 +26,7 @@
     "react-hot-loader": "^4.12.5",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "serve": "^11.1.0",
     "typescript": "3.5.3",
     "webpack-merge": "^4.2.1",
     "webpack-parallel-uglify-plugin": "^1.1.0"
