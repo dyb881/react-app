@@ -53,6 +53,7 @@ git clone https://github.com/dyb881/react-app [项目名称]
 ### 环境初始化
 
 由于可兼容 js/jsx/ts/tsx 开发，并同步支持 eslint 检测<br>
+如 /src/pages/home/index.tsx 和 /src/pages/user/index.jsx 这两个文件均可正常编译使用<br>
 创建时直接使用 ts 环境即可
 
 ```
