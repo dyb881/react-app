@@ -26,6 +26,7 @@ git clone https://github.com/dyb881/react-app [项目名称]
 - 开发环境下，热更新
 - 基础样式准备
 - 路由准备，并设置过度动画
+- 请求配置，以及默认请求器（可替换）
 
 ## 搭建过程
 
@@ -395,6 +396,31 @@ import 'App.less';
 在 /src/config/routers.ts 中配置页面路由<br>
 路由使用 [@dyb881/router](https://github.com/dyb881/router) 组件进行注册<br>
 自带过度动画，强制使用一级路由
+
+#### 请求函数
+
+在 /src/configs/request.ts 中配置请求相关信息<br>
+默认使用 [@dyb881/fetch-request](https://github.com/dyb881/fetch-request) 请求器，自带控制台打印信息。<br>
+请求器可以在 /src/api/request.ts 自行替换或封装，只需要遵守同样的导出规则即可<br>
+
+先在 /src/api/index.ts 封装请求
+
+```
+import { post } from './request';
+
+export const user = {
+  login: (data: any) => post('/login', data, '登录'),
+};
+
+```
+
+然后在其他地方或页面中使用时
+
+```
+import { user } from 'api';
+
+user.login({});
+```
 
 ## 知识准备
 
