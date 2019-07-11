@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@dyb881/fetch-request": "^0.2.3",
+    "@dyb881/mock-server": "^0.1.13",
     "@dyb881/router": "^0.1.10",
     "@types/jest": "24.0.15",
     "@types/lodash": "^4.14.136",
@@ -35,6 +36,7 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
+    "mock": "node src/api/mock-server.js",
     "serve": "serve -s build"
   },
   "eslintConfig": {

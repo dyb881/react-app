@@ -28,12 +28,14 @@ git clone https://github.com/dyb881/react-app [项目名称]
 - 路由准备，并设置过度动画
 - 请求配置，以及默认请求器（可替换）
 - 快捷服务启动
+- 模拟数据服务
 
 ## 目录结构
 
 - src - 源代码，开发项目过程中，一般只会动这里的代码
   - api - 请求相关，可直接导出请求函数，以及封装后的接口
     - request.ts - 配置导出请求方法
+    - mock-server.js - 模拟数据服务接口注册
     - index.ts - 封装并导出请求接口
   - components - 全局组件，会被页面复用的组件
   - config - 全局配置
@@ -465,6 +467,64 @@ export const user = {
 import { user } from 'api';
 
 user.login({});
+```
+
+#### 模拟数据服务
+
+安装模拟数据服务插件
+
+```
+npm i @dyb881/mock-server
+```
+
+创建 /src/api/mock-server.js
+
+```
+const mockServer = require('@dyb881/mock-server').default;
+const ip = require('ip');
+
+console.log('模拟数据环境：', `http://localhost:3000/?host=http://${ip.address()}`);
+
+const tableInfo = {
+  id: '@id',
+  Batch: '@id',
+  Description: '@ctitle(50)',
+};
+
+// 数据统一返回处理
+mockServer(data => ({
+  code: 0,
+  msg: '模拟数据',
+  data,
+}))
+  .get('/api/getTableList', req => {
+    const { pageSize = 10, pageNum = 1 } = req.query;
+    return {
+      [`list|${pageSize}`]: [tableInfo],
+      total: 100,
+      pageNum,
+    };
+  })
+  .get('/api/getTableInfo', tableInfo)
+  .delay(300, 1000) // 延迟时间
+  .init(); // 启动服务
+```
+
+在 package.json 添加一行命令
+
+```
+{
+  "scripts": {
+    ...,
+    "mock": "node src/api/mock-server.js"
+  },
+}
+```
+
+使用时
+
+```
+npm run mock
 ```
 
 ## 知识准备
