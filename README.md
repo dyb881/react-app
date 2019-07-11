@@ -1,18 +1,18 @@
 # react-app
 
 create-react-app + react-app-rewired 进行二次配置：按需加载、less-loader、启用 eslint 配置、特殊自定义配置<br>
-如果需要更具体的业务模版，可以跳转至 [模版生成器]https://github.com/dyb881/create-react-app
+如果需要更具体的业务模版，可以跳转至 [模版生成器](https://github.com/dyb881/create-react-app)
 
 ## 使用方法
 
 ```
 git clone https://github.com/dyb881/react-app [项目名称]
 cd [项目名称]
-npm i
-npm start
-npm run build
-npm run mock
-npm run serve
+npm i // 安装依赖
+npm start // 开发模式
+npm run build // 打包生产代码
+npm run mock // 启动模拟数据服务
+npm run serve // 启动快捷服务
 ```
 
 ## 拓展功能
