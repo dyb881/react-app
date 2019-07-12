@@ -590,7 +590,7 @@ npm run mock
 
 - web 基础 - [MDN](https://developer.mozilla.org/zh-CN/)，[W3C](http://www.w3school.com.cn/)
 - ES Next - [JavaScript 完整手册](https://juejin.im/post/5bff57fee51d45021a167991)
-- TypeScript(可选，直接使用 js/jsx 文件开发即可) - [官方文档](https://www.tslang.cn/docs/handbook/basic-types.html)
+- TypeScript(可选，直接使用 js/jsx 文件开发亦可) - [官方文档](https://www.tslang.cn/docs/handbook/basic-types.html)
 - React - [入门教程](http://www.ruanyifeng.com/blog/2015/03/react.html)
 - 路由 react-router-dom - [官方文档](https://reacttraining.com/react-router/web/guides/quick-start)，[中文文档](https://www.jianshu.com/p/b117b437dc5a)
 - 预处理 less/scss/sass - [less 文档](https://www.html.cn/doc/less/)，[scss/sass 文档](http://sass.bootcss.com/docs/sass-reference)，选一即可。
