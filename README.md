@@ -22,6 +22,7 @@ npm run serve // 启动快捷服务
 - prettier 格式化配置
 - homepage 打包路径设置
 - tsconfig.json ts 编译配置
+- 快捷服务启动
 - antd antd-mobile lodash 三个常用依赖的按需加载
 - less 文件加载，以及主题色设置
 - eslint 可二次配置
@@ -34,7 +35,6 @@ npm run serve // 启动快捷服务
 - 基础样式准备
 - 路由准备，并设置过度动画
 - 请求配置，以及默认请求器（可替换）
-- 快捷服务启动
 - 模拟数据服务
 
 ## 目录结构
@@ -123,6 +123,35 @@ npx create-react-app react-app --typescript
   },
   "include": ["src"]
 }
+```
+
+</details>
+
+<details>
+<summary>添加快捷服务启动</summary>
+
+安装依赖
+
+```
+npm i serve
+```
+
+在 package.json 添加一行命令
+
+```
+{
+  "scripts": {
+    ...,
+    "serve": "serve -s build"
+  },
+}
+```
+
+使用时
+
+```
+npm run build
+npm run serve
 ```
 
 </details>
@@ -408,32 +437,6 @@ module.exports = override(
 
 主要是设置：移动端禁止缩放、收藏栏图标、手机号码识别禁止、等相关属性设置<br>
 更多详情，请查看文件[/public/index.html](https://github.com/dyb881/react-app/blob/master/public/index.html)
-
-### 添加快捷服务启动
-
-安装依赖
-
-```
-npm i serve
-```
-
-在 package.json 添加一行命令
-
-```
-{
-  "scripts": {
-    ...,
-    "serve": "serve -s build"
-  },
-}
-```
-
-使用时
-
-```
-npm run build
-npm run serve
-```
 
 ### 源码（/src）内做出一些默认设置
 
