@@ -91,7 +91,8 @@ npx create-react-app react-app --typescript
 
 </details>
 
-### tsconfig.json 配置
+<details>
+<summary>tsconfig.json 配置</summary>
 
 相关配置自行查阅<br>
 需要特别注意的是 baseUrl 设置为 src 后，可使用非相对路径来导入你的外部依赖<br>
@@ -123,6 +124,8 @@ npx create-react-app react-app --typescript
   "include": ["src"]
 }
 ```
+
+</details>
 
 ### 二次拓展配置（no eject）
 
