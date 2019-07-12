@@ -139,7 +139,8 @@ customize-cra 是基于 react-app-rewired 核型，提供了一组实用工具�
 npm i react-app-rewired customize-cra
 ```
 
-#### 修改 package.json 文件
+<details>
+<summary>修改 package.json 文件</summary>
 
 ```
 {
@@ -152,7 +153,10 @@ npm i react-app-rewired customize-cra
 }
 ```
 
-#### 创建 config-overrides.js
+</details>
+
+<details>
+<summary>创建 config-overrides.js</summary>
 
 ```
 const { override } = require('customize-cra');
@@ -160,7 +164,10 @@ const { override } = require('customize-cra');
 module.exports = override();
 ```
 
-#### 按需加载
+</details>
+
+<details>
+<summary>按需加载</summary>
 
 目前使用到该功能的依赖，一般为：antd、antd-mobile、lodash<br>
 所以这里会默认依赖这三个，只要在项目内未 import，是不会参与打包的，所以不必有过多的顾虑<br>
@@ -170,7 +177,7 @@ babel-plugin-import 则是适用于 babel 的模块化导入插件
 npm i antd antd-mobile lodash @types/lodash babel-plugin-import
 ```
 
-#### 按需加载 配置
+config-overrides.js 配置
 
 ```
 const { override, fixBabelImports } = require('customize-cra');
@@ -183,13 +190,18 @@ module.exports = override(
 );
 ```
 
-#### 安装 less 和 less-loader
+</details>
+
+<details>
+<summary>less 配置</summary>
+
+安装
 
 ```
 npm i less less-loader
 ```
 
-#### less-loader
+添加 less-loader
 
 ```
 const { override, addLessLoader } = require('customize-cra');
@@ -203,7 +215,7 @@ module.exports = override(
 );
 ```
 
-#### less-loader 配置主题色变量
+less-loader 配置主题色变量
 
 ```
 const { override, addLessLoader } = require('customize-cra');
@@ -230,8 +242,7 @@ module.exports = override(
 );
 ```
 
-#### less 在 ts 中使用 CSS Modules
-
+less 在 ts 中使用 CSS Modules<br>
 虽然 create-react-app 中的样式文件只要带上 module 就可以使用 CSS Modules<br>
 但是需要在声明文件中添加 declare module，才能够被 ts 文件识别<br>
 在 /src/react-app-env.d.ts 中添加
@@ -245,7 +256,10 @@ declare module '*.module.less' {
 }
 ```
 
-#### 二次配置 eslint
+</details>
+
+<details>
+<summary>二次配置 eslint</summary>
 
 在实际开发中，因为不得已的情况，需要自定义部分 eslint 规则限制的时候，添加如下配置<br>
 
@@ -269,7 +283,10 @@ module.exports = override(
 }
 ```
 
-#### 自定义配置
+</details>
+
+<details>
+<summary>自定义配置</summary>
 
 customize-cra 提供的工具十分有限，这时候就需要更加灵活的自定义配置<br>
 webpack-merge 是针对 webpack 设计的 merge 工具<br>
@@ -301,7 +318,10 @@ module.exports = override(
 );
 ```
 
-#### 代码压缩
+</details>
+
+<details>
+<summary>代码压缩</summary>
 
 生产模式需要关闭 map 的输出，删除所有的 `console` 语句
 
@@ -360,7 +380,10 @@ module.exports = override(
 );
 ```
 
-#### 添加 postcss 插件（自行根据实际情况加入）
+</details>
+
+<details>
+<summary>添加 postcss 插件（自行根据实际情况加入）</summary>
 
 addPostcssPlugins 必须放在 addLessLoader 或样式相关的配置后面
 
@@ -378,6 +401,8 @@ module.exports = override(
   ])
 );
 ```
+
+</details>
 
 ### index.html 文件的属性设置
 
@@ -412,7 +437,8 @@ npm run serve
 
 ### 源码（/src）内做出一些默认设置
 
-#### 添加热更新
+<details>
+<summary>添加热更新</summary>
 
 安装热更新插件
 
@@ -441,7 +467,10 @@ ReactDOM.render(<App />, document.getElementById('root'));
 })();
 ```
 
-#### 基础样式准备
+</details>
+
+<details>
+<summary>基础样式准备</summary>
 
 在 /src/App.tsx 中引用 normalize.css 和 /src/App.less 全局样式<br>
 normalize.css 在默认的 HTML 元素样式上提供了跨浏览器的高度一致性<br>
@@ -451,13 +480,19 @@ import 'normalize.css';
 import 'App.less';
 ```
 
-#### 路由准备
+</details>
+
+<details>
+<summary>路由准备</summary>
 
 在 /src/config/routers.ts 中配置页面路由<br>
 路由使用 [@dyb881/router](https://github.com/dyb881/router) 组件进行注册<br>
 自带过度动画，强制使用一级路由
 
-#### 请求配置，以及默认请求器
+</details>
+
+<details>
+<summary>请求配置，以及默认请求器</summary>
 
 在 /src/configs/request.ts 中配置请求相关信息<br>
 默认使用 [@dyb881/fetch-request](https://github.com/dyb881/fetch-request) 请求器，自带控制台打印信息。<br>
@@ -482,7 +517,10 @@ import { user } from 'api';
 user.login({});
 ```
 
-#### 模拟数据服务
+</details>
+
+<details>
+<summary>模拟数据服务</summary>
 
 安装模拟数据服务插件
 
@@ -539,6 +577,8 @@ mockServer(data => ({
 ```
 npm run mock
 ```
+
+</details>
 
 ## 知识准备
 
