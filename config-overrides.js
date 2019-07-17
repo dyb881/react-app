@@ -1,9 +1,6 @@
 const Merge = require('webpack-merge');
 const { override, fixBabelImports, addLessLoader, addPostcssPlugins, useEslintRc } = require('customize-cra');
 
-// 插件
-const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
-
 module.exports = override(
   // 按需加载
   fixBabelImports('antd', { libraryDirectory: 'es', style: true }),
@@ -43,6 +40,7 @@ module.exports = override(
 
     if (process.env.NODE_ENV === 'production') {
       // 生产模式下的配置
+      const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
       config = Merge(config, {
         optimization: {
           minimizer: [
