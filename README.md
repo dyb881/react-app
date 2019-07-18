@@ -19,23 +19,23 @@ npm run serve // 启动快捷服务
 
 除了 create-react-app --typescript 已有的功能外，做出一个更完善的配置功能，以及一些基础准备：
 
-- prettier 格式化配置
-- homepage 打包路径设置
-- tsconfig.json ts 编译配置
-- 快捷服务启动
+- prettier 格式化配置（实际使用需要在IDE上安装prettier）
+- homepage 打包路径设置（默认为相对路径）
+- tsconfig.json ts 编译配置（追加装饰器和迭代器支持，以及遇到未使用变量报错）
 - antd antd-mobile lodash 三个常用依赖的按需加载
-- less 文件加载，以及主题色设置
-- eslint 可二次配置
+- less 文件加载，以及主题色设置（主题色可参考 config-overrides.js 文件）
+- eslint 可二次配置（需要在 package.json 中配置）
 - 可自定义 webpack 配置
   - 默认在生产模式中配置了代码压缩
 - 添加 postcss 插件
   - 添加 postcss-pxtorem（注！非默认，需手动清除注释）
 - index.html 默认添加：移动端禁止缩放、收藏栏图标、手机号码识别禁止、等相关属性设置
-- 开发环境下，热更新
-- 基础样式准备
-- 路由准备，并设置过度动画
-- 请求配置，以及默认请求器（可替换）
-- 模拟数据服务
+- 开发环境下，热更新（即 start 后，保存文件会导致页面自动刷新更改，而不刷新整个页面，保留当前状态）
+- 基础样式准备（normalize.css 样式初始化，App.less 小量样式的初定义，以及一些常用类的定义，实际使用 css module 的话，可以不理会这些类）
+- 路由准备，并设置过度动画（使用个人封装的路由组件 [@dyb881/router](https://github.com/dyb881/router)，若有特殊需求，可自行使用 react-router-dom 根据配置注册路由）
+- 请求配置，以及默认请求器（使用个人封装的请求器 [@dyb881/fetch-request](https://github.com/dyb881/fetch-request)，若有特殊需求，自行创建请求器，尽量保持请求器的一致导出，如 get、post、put 等）
+- 模拟数据服务（快捷启用一个 模拟数据接口服务，具体注册方法 可参考 [@dyb881/mock-server](https://github.com/dyb881/mock-server)）
+- 快捷服务启动（默认指向，打包后的文件夹 build）
 
 ## 目录结构
 
