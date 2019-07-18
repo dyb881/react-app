@@ -30,7 +30,7 @@ npm run serve // 启动快捷服务
 - 添加 postcss 插件
   - 添加 postcss-pxtorem（注！非默认，需手动清除注释）
 - index.html 默认添加：移动端禁止缩放、收藏栏图标、手机号码识别禁止、等相关属性设置
-- 开发环境下，热更新（即 start 后，保存文件会导致页面自动刷新更改，而不刷新整个页面，保留当前状态）
+- 开发环境下，热更新（即 start 后，保存文件会导致对应组件自动刷新更改，而不刷新整个页面，保留当前状态）
 - 基础样式准备（normalize.css 样式初始化，App.less 小量样式的初定义，以及一些常用类的定义，实际使用 css module 的话，可以不理会这些类）
 - 路由准备，并设置过度动画（使用个人封装的路由组件 [@dyb881/router](https://github.com/dyb881/router)，若有特殊需求，可自行使用 react-router-dom 根据配置注册路由）
 - 请求配置，以及默认请求器（使用个人封装的请求器 [@dyb881/fetch-request](https://github.com/dyb881/fetch-request)，若有特殊需求，自行创建请求器，尽量保持请求器的一致导出，如 get、post、put 等）
