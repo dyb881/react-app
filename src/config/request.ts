@@ -15,7 +15,7 @@ export const params = qs.parse(search.slice(1));
 /**
  * 成功状态码
  */
-export const successCode = [0, 200, '0000', 1000, 1001, 1002, 1003, 1004, 1005];
+export const successCode = [0, 200, '0000', 1000, 1001, 1002, 1003, 1004, 1005, 2000];
 
 /**
  * 请求配置
