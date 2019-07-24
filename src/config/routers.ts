@@ -14,4 +14,6 @@ Object.keys(routers).forEach(i => {
   routers[i] = require('pages/' + routers[i]).default;
 });
 
-export default routers;
+export default routers as {
+  [key: string]: React.ComponentType<any>;
+};
