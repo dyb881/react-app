@@ -6,4 +6,4 @@ import '@dyb881/router/lib/style.css';
 /**
  * 全局布局以及路由注册
  */
-export default () => <Router routers={routers} transition />;
+export default () => <Router routers={routers} />;
