@@ -1,5 +1,5 @@
 {
-  "name": "react-app",
+  "name": "@dyb881/react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,20 +11,20 @@
     "@types/node": "12.6.8",
     "@types/qs": "^6.5.3",
     "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.4",
+    "@types/react-dom": "16.8.5",
     "@types/react-router-dom": "^4.3.4",
-    "antd": "^3.20.3",
+    "antd": "^3.20.7",
     "antd-mobile": "^2.2.14",
     "babel-plugin-import": "^1.12.0",
     "customize-cra": "^0.4.1",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.15",
     "postcss-pxtorem": "^4.0.1",
     "react": "^16.8.6",
     "react-app-rewired": "^2.1.3",
     "react-dom": "^16.8.6",
-    "react-hot-loader": "^4.12.8",
+    "react-hot-loader": "^4.12.10",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "typescript": "3.5.3",
@@ -67,5 +67,18 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "./"
+  "homepage": "http://./",
+  "description": "create-react-app + react-app-rewired 进行二次配置：按需加载、less-loader、启用 eslint 配置、特殊自定义配置<br> 如果需要更具体的业务模版，可以跳转至 [模版生成器](https://github.com/dyb881/create-react-app)",
+  "main": "config-overrides.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyb881/react-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dyb881/react-app/issues"
+  }
 }
