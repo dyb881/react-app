@@ -5,7 +5,7 @@ module.exports = override(
   // 按需加载
   fixBabelImports('antd', { libraryDirectory: 'es', style: true }),
   fixBabelImports('antd-mobile', { libraryDirectory: 'es', style: true }),
-  fixBabelImports('lodash', { libraryDirectory: '' }),
+  fixBabelImports('lodash', { libraryDirectory: '', camel2DashComponentName: false }),
   // 添加 less-loader
   addLessLoader({
     javascriptEnabled: true,
