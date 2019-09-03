@@ -42,6 +42,9 @@ module.exports = override(
       // 生产模式下的配置
       const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
       config = Merge(config, {
+        output: {
+          publicPath: '.', // 引用脚本前缀
+        },
         optimization: {
           minimizer: [
             // 多进程压缩
@@ -72,6 +75,10 @@ module.exports = override(
       // 开发模式下的配置
       config = Merge(config, {});
     }
+
+    // 打印运行配置
+    const fs = require('fs');
+    fs.writeFileSync(`config-${process.env.NODE_ENV}.json`, JSON.stringify(config, null, 2));
 
     // 返回更改后的配置
     return config;
