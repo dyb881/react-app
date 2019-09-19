@@ -73,7 +73,7 @@ npx create-react-app react-app --typescript
 <details>
 <summary>package.json 追加配置</summary>
 
-```json
+```javascript
 {
   "prettier": { // 代码格式化 prettier 的配置，自行查阅如何在编辑工具上安装和使用 prettier
     "printWidth": 120,
@@ -98,7 +98,7 @@ npx create-react-app react-app --typescript
 需要特别注意的是 baseUrl 设置为 src 后，可使用非相对路径来导入你的外部依赖<br>
 如 import 'App.css' 时，会先在 src 文件夹内检索是否有对应文件或文件夹，找不到才会去 node_modules 寻找外部依赖
 
-```json
+```javascript
 {
   "compilerOptions": {
     "baseUrl": "src",
@@ -171,7 +171,7 @@ npm i react-app-rewired customize-cra
 <details>
 <summary>修改 package.json 文件</summary>
 
-```json
+```javascript
 {
   "scripts": {
     "start": "react-app-rewired start",
@@ -303,7 +303,7 @@ module.exports = override(
 
 在 package.json 中配置 eslint
 
-```json
+```javascript
 {
   "eslintConfig": {
     "extends": "react-app",
