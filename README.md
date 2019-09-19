@@ -73,7 +73,7 @@ npx create-react-app react-app --typescript
 <details>
 <summary>package.json 追加配置</summary>
 
-```
+```json
 {
   "prettier": { // 代码格式化 prettier 的配置，自行查阅如何在编辑工具上安装和使用 prettier
     "printWidth": 120,
@@ -98,7 +98,7 @@ npx create-react-app react-app --typescript
 需要特别注意的是 baseUrl 设置为 src 后，可使用非相对路径来导入你的外部依赖<br>
 如 import 'App.css' 时，会先在 src 文件夹内检索是否有对应文件或文件夹，找不到才会去 node_modules 寻找外部依赖
 
-```
+```json
 {
   "compilerOptions": {
     "baseUrl": "src",
@@ -138,7 +138,7 @@ npm i serve
 
 在 package.json 添加一行命令
 
-```
+```javascript
 {
   "scripts": {
     ...,
@@ -171,7 +171,7 @@ npm i react-app-rewired customize-cra
 <details>
 <summary>修改 package.json 文件</summary>
 
-```
+```json
 {
   "scripts": {
     "start": "react-app-rewired start",
@@ -187,7 +187,7 @@ npm i react-app-rewired customize-cra
 <details>
 <summary>创建 config-overrides.js</summary>
 
-```
+```javascript
 const { override } = require('customize-cra');
 
 module.exports = override();
@@ -208,7 +208,7 @@ npm i antd antd-mobile lodash @types/lodash babel-plugin-import
 
 config-overrides.js 配置
 
-```
+```javascript
 const { override, fixBabelImports } = require('customize-cra');
 
 module.exports = override(
@@ -232,7 +232,7 @@ npm i less less-loader
 
 添加 less-loader
 
-```
+```javascript
 const { override, addLessLoader } = require('customize-cra');
 
 module.exports = override(
@@ -246,7 +246,7 @@ module.exports = override(
 
 less-loader 配置主题色变量
 
-```
+```javascript
 const { override, addLessLoader } = require('customize-cra');
 
 module.exports = override(
@@ -276,7 +276,7 @@ less 在 ts 中使用 CSS Modules<br>
 但是需要在声明文件中添加 declare module，才能够被 ts 文件识别<br>
 在 /src/react-app-env.d.ts 中添加
 
-```
+```javascript
 declare module '*.module.less' {
   const classes: {
     [key: string]: string;
@@ -292,7 +292,7 @@ declare module '*.module.less' {
 
 在实际开发中，因为不得已的情况，需要自定义部分 eslint 规则限制的时候，添加如下配置<br>
 
-```
+```javascript
 const { override, useEslintRc } = require('customize-cra');
 
 module.exports = override(
@@ -303,7 +303,7 @@ module.exports = override(
 
 在 package.json 中配置 eslint
 
-```
+```json
 {
   "eslintConfig": {
     "extends": "react-app",
@@ -324,7 +324,7 @@ webpack-merge 是针对 webpack 设计的 merge 工具<br>
 npm i webpack-merge
 ```
 
-```
+```javascript
 const Merge = require('webpack-merge');
 const { override } = require('customize-cra');
 
@@ -358,7 +358,7 @@ module.exports = override(
 npm i webpack-parallel-uglify-plugin
 ```
 
-```
+```javascript
 const Merge = require('webpack-merge');
 const { override } = require('customize-cra');
 
@@ -416,7 +416,7 @@ module.exports = override(
 
 addPostcssPlugins 必须放在 addLessLoader 或样式相关的配置后面
 
-```
+```javascript
 const { override, addPostcssPlugins } = require('customize-cra');
 
 module.exports = override(
@@ -451,13 +451,13 @@ npm i react-hot-loader
 
 /src/index.tsx
 
-```
+```javascript
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
 改为
 
-```
+```javascript
 (async () => {
   let RenderApp = App;
   // 开发环境
@@ -478,7 +478,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 在 /src/App.tsx 中引用 normalize.css 和 /src/App.less 全局样式<br>
 normalize.css 在默认的 HTML 元素样式上提供了跨浏览器的高度一致性<br>
 
-```
+```javascript
 import 'normalize.css';
 import 'App.less';
 ```
@@ -503,7 +503,7 @@ import 'App.less';
 
 先在 /src/api/index.ts 封装请求
 
-```
+```javascript
 import { post } from './request';
 
 export const user = {
@@ -514,7 +514,7 @@ export const user = {
 
 然后在其他地方或页面中使用时
 
-```
+```javascript
 import { user } from 'api';
 
 user.login({});
@@ -533,7 +533,7 @@ npm i @dyb881/mock-server
 
 创建 /src/api/mock-server.js
 
-```
+```javascript
 const mockServer = require('@dyb881/mock-server').default;
 const ip = require('ip');
 
@@ -566,7 +566,7 @@ mockServer(data => ({
 
 在 package.json 添加一行命令
 
-```
+```javascript
 {
   "scripts": {
     ...,
