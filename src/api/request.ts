@@ -11,7 +11,7 @@ export const { baseURL, get, post, put, patch, del, upload } = new FetchReques({
     return config;
   },
   interceptorsResponse: (res, config) => {
-    if (!res.errorText && config.responseType === 'json' && successCode.indexOf(res.code) === -1) {
+    if (!res.errorText && config.responseType === 'json' && !successCode.includes(res.code)) {
       res.error = res.code;
       res.errorText = res.msg || res.message || '请求异常';
     }
