@@ -37,7 +37,8 @@
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
     "mock": "node src/api/mock-server.js",
-    "serve": "serve -s build"
+    "serve": "serve -s build",
+    "ncu": "git add . && git commit --m '更新依赖' && git push"
   },
   "eslintConfig": {
     "extends": "react-app",
