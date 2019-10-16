@@ -1,14 +1,3 @@
-import { RouteComponentProps } from 'react-router-dom';
-
-/**
- * 路由组件
- */
-export interface IRoute<P = {}> extends RouteComponentProps<P> {}
-
-/**
- * 输入文本框
- */
-export interface IInput<V = any> {
-  value?: V;
-  onChange?: (value: V) => void;
-}
+export * from './type'; // 类型工具
+export * from './interface'; // 接口工具
+export * from './module'; // 第三方插件类型
