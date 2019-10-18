@@ -60,6 +60,9 @@ module.exports = override(
           publicPath: '.', // 引用脚本相对路径
         },
       });
+
+      // 全局删除 console
+      config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true;
     } else {
       // 开发模式下的配置
       config = Merge(config, {
@@ -72,8 +75,8 @@ module.exports = override(
     }
 
     // 打印运行配置
-    // const fs = require('fs');
-    // fs.writeFileSync(`config-${process.env.NODE_ENV}.json`, JSON.stringify(config, null, 2));
+    const fs = require('fs');
+    fs.writeFileSync(`config-${process.env.NODE_ENV}.json`, JSON.stringify(config, null, 2));
 
     // 返回更改后的配置
     return config;

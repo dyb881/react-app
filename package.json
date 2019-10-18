@@ -42,7 +42,9 @@
   },
   "eslintConfig": {
     "extends": "react-app",
-    "rules": {}
+    "rules": {
+      "react-hooks/exhaustive-deps": 0
+    }
   },
   "prettier": {
     "printWidth": 120,
