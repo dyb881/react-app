@@ -28,8 +28,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.2.0",
     "typescript": "^3.6.4",
-    "webpack-merge": "^4.2.2",
-    "webpack-parallel-uglify-plugin": "^1.1.2"
+    "webpack-merge": "^4.2.2"
   },
   "scripts": {
     "start": "react-app-rewired start",
