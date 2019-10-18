@@ -1,11 +1,13 @@
-/*
+/**
  * 路由绑定组件路径
  * 默认为 /src/pages 下的文件或文件夹
  */
-const routersPaths: {
+export type TRouters = {
   // 路由地址：绑定组件路径
   [path: string]: string;
-} = {
+};
+
+const routersPaths: TRouters = {
   '/': 'home',
   '/user': 'user',
 };
