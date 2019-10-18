@@ -57,15 +57,18 @@ module.exports = override(
       // 生产模式下的配置
       config = Merge(config, {
         output: {
-          publicPath: '.', // 引用脚本前缀
-        },
-        optimization: {
-          minimizer: [],
+          publicPath: '.', // 引用脚本相对路径
         },
       });
     } else {
       // 开发模式下的配置
-      config = Merge(config, {});
+      config = Merge(config, {
+        resolve: {
+          alias: {
+            'react-dom': '@hot-loader/react-dom',
+          },
+        },
+      });
     }
 
     // 打印运行配置

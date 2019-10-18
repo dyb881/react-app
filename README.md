@@ -19,7 +19,7 @@ npm run serve // 启动快捷服务
 
 除了 create-react-app --typescript 已有的功能外，做出一个更完善的配置功能，以及一些基础准备：
 
-- prettier 格式化配置（实际使用需要在IDE上安装prettier）
+- prettier 格式化配置（实际使用需要在 IDE 上安装 prettier）
 - homepage 打包路径设置（默认为相对路径）
 - tsconfig.json ts 编译配置（追加装饰器和迭代器支持，以及遇到未使用变量报错）
 - antd antd-mobile lodash 三个常用依赖的按需加载
@@ -345,23 +345,21 @@ npm i webpack-merge
 const Merge = require('webpack-merge');
 const { override } = require('customize-cra');
 
-module.exports = override(
-  config => {
-    // 自定义配置
+module.exports = override(config => {
+  // 自定义配置
+  config = Merge(config, {});
+
+  if (process.env.NODE_ENV === 'production') {
+    // 生产模式下的配置
     config = Merge(config, {});
-
-    if (process.env.NODE_ENV === 'production') {
-      // 生产模式下的配置
-      config = Merge(config, {});
-    } else {
-      // 开发模式下的配置
-      config = Merge(config, {});
-    }
-
-    // 返回更改后的配置
-    return config;
+  } else {
+    // 开发模式下的配置
+    config = Merge(config, {});
   }
-);
+
+  // 返回更改后的配置
+  return config;
+});
 ```
 
 </details>
@@ -401,7 +399,7 @@ module.exports = override(
 安装热更新插件
 
 ```
-npm i react-hot-loader
+npm i react-hot-loader @hot-loader/react-dom
 ```
 
 /src/index.tsx
@@ -423,6 +421,35 @@ ReactDOM.render(<App />, document.getElementById('root'));
   }
   ReactDOM.render(<RenderApp />, document.getElementById('root'));
 })();
+```
+
+并在 config-overrides.js 添加
+
+```javascript
+const Merge = require('webpack-merge');
+const { override } = require('customize-cra');
+
+module.exports = override(config => {
+  // 自定义配置
+  config = Merge(config, {});
+
+  if (process.env.NODE_ENV === 'production') {
+    // 生产模式下的配置
+    config = Merge(config, {});
+  } else {
+    // 开发模式下的配置
+    config = Merge(config, {
+      resolve: {
+        alias: {
+          'react-dom': '@hot-loader/react-dom',
+        },
+      },
+    });
+  }
+
+  // 返回更改后的配置
+  return config;
+});
 ```
 
 </details>
@@ -464,7 +491,6 @@ import { post } from './request';
 export const user = {
   login: (data: any) => post('/login', data, '登录'),
 };
-
 ```
 
 然后在其他地方或页面中使用时
