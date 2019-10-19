@@ -75,8 +75,8 @@ module.exports = override(
     }
 
     // 打印运行配置
-    const fs = require('fs');
-    fs.writeFileSync(`config-${process.env.NODE_ENV}.json`, JSON.stringify(config, null, 2));
+    // const fs = require('fs');
+    // fs.writeFileSync(`config-${process.env.NODE_ENV}.json`, JSON.stringify(config, null, 2));
 
     // 返回更改后的配置
     return config;
