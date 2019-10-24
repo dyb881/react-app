@@ -8,7 +8,9 @@ import 'App.less';
  * 状态以及路由注入
  */
 export default () => (
-  <Router>
-    <Pages />
-  </Router>
+  <React.StrictMode>
+    <Router>
+      <Pages />
+    </Router>
+  </React.StrictMode>
 );
