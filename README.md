@@ -457,11 +457,16 @@ module.exports = override(config => {
 <details>
 <summary>基础样式准备</summary>
 
-在 /src/App.tsx 中引用 normalize.css 和 /src/App.less 全局样式<br>
-normalize.css 在默认的 HTML 元素样式上提供了跨浏览器的高度一致性<br>
+App.css 中引用 normalize 打包会根据 browserslist 自行 Reset
+
+```
+@import-normalize;
+```
+
+在 /src/App.tsx 中引用 App.css 和 /src/App.less 全局样式<br>
 
 ```javascript
-import 'normalize.css';
+import 'App.css';
 import 'App.less';
 ```
 

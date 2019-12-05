@@ -1,0 +1,955 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"a",
+				"allowClear\tJSX attribute"
+			],
+			[
+				"pi",
+				"paging\tJSX attribute"
+			],
+			[
+				"Ht",
+				"HTMLProps\tinterface"
+			],
+			[
+				"N",
+				"ReactNode\ttype"
+			],
+			[
+				"rf",
+				"rcfp\t带 mobx HOC的页面组件"
+			],
+			[
+				"onS",
+				"onSub\t(index.tsx)"
+			],
+			[
+				"log",
+				"loginCaptcha\t(websocket.ts)"
+			],
+			[
+				"onC",
+				"onClick\tJSX attribute"
+			],
+			[
+				"w",
+				"WingBlank\talias"
+			],
+			[
+				"m",
+				"mobx\texternal module name"
+			],
+			[
+				"g",
+				"goUrl\tproperty"
+			],
+			[
+				"use",
+				"useEffect\tfunction"
+			],
+			[
+				"rfc",
+				"rcfp\t带 mobx HOC的页面组件"
+			],
+			[
+				"r",
+				"r\treact组件"
+			],
+			[
+				"ex",
+				"exports\tproperty"
+			],
+			[
+				"res",
+				"resolve\t.resolve()"
+			],
+			[
+				"s",
+				"sleep\tmethod"
+			],
+			[
+				"ti",
+				"showTime\tJSX attribute"
+			],
+			[
+				"D",
+				"DatePicker\talias"
+			],
+			[
+				"st",
+				"style\tabc"
+			],
+			[
+				"in",
+				"inputProps\tJSX attribute"
+			],
+			[
+				"M",
+				"Modal\talias"
+			],
+			[
+				"sta",
+				"start\t(index.tsx)"
+			],
+			[
+				"me",
+				"message\talias"
+			],
+			[
+				"it",
+				"itemProps\tJSX attribute"
+			],
+			[
+				"get",
+				"getList\tproperty"
+			],
+			[
+				"sf",
+				"selfQuery\tabc"
+			],
+			[
+				"e",
+				"extra\tJSX attribute"
+			],
+			[
+				"fu",
+				"fusing/"
+			],
+			[
+				"di",
+				"disabled\tproperty"
+			],
+			[
+				"T",
+				"TValidatorConfig\t(createValidator.ts)"
+			],
+			[
+				"ret",
+				"return\tabc"
+			],
+			[
+				"crea",
+				"createMatchesRegExp\t(tool.ts)"
+			],
+			[
+				"cr",
+				"createData\tabc"
+			],
+			[
+				"c",
+				"checked\tJSX attribute"
+			],
+			[
+				"jso",
+				"jsonParse\tconst"
+			],
+			[
+				"hos",
+				"hostname\tabc"
+			],
+			[
+				"unp",
+				"UnprocessableEntityException\tclass"
+			],
+			[
+				"not",
+				"NotImplementedException\tclass"
+			],
+			[
+				"U",
+				"UpdateAdminData\t(admin.service.ts)"
+			],
+			[
+				"u",
+				"UpdateAdminDto\tclass"
+			],
+			[
+				"Ba",
+				"BadRequestException\tclass"
+			],
+			[
+				"t",
+				"throw\tkeyword"
+			],
+			[
+				"re",
+				"required\tproperty"
+			],
+			[
+				"O",
+				"One\t(dto.ts)"
+			],
+			[
+				"type",
+				"typeof\tkeyword"
+			],
+			[
+				"ba",
+				"setBasePath\tmethod"
+			],
+			[
+				"bod",
+				"bodyParser\tproperty"
+			],
+			[
+				"n",
+				"nullable\tproperty"
+			],
+			[
+				"lo",
+				"localStorage.boc_token_time\tabc"
+			],
+			[
+				"R",
+				"Res\tconst"
+			],
+			[
+				"da",
+				"datetime\tstring"
+			],
+			[
+				"con",
+				"console\tvar"
+			],
+			[
+				"co",
+				"common\tdirectory"
+			],
+			[
+				"f",
+				"filters\tdirectory"
+			],
+			[
+				"Read",
+				"readonly\tkeyword"
+			],
+			[
+				"is",
+				"isvalid\t(config.tsx)"
+			],
+			[
+				"data",
+				"data\tconst"
+			],
+			[
+				"val",
+				"value\tabc"
+			],
+			[
+				"ms",
+				"message\tabc"
+			],
+			[
+				"A",
+				"AutoComplete\talias"
+			],
+			[
+				"op",
+				"options\tJSX attribute"
+			],
+			[
+				"IN",
+				"Input\talias"
+			],
+			[
+				"cl",
+				"clearInterval\tfunction"
+			],
+			[
+				"set",
+				"setInterval\tfunction"
+			],
+			[
+				"creat",
+				"createElement\tmethod"
+			],
+			[
+				"un",
+				"undefined\tvar"
+			],
+			[
+				"onr",
+				"onForm\tJSX attribute"
+			],
+			[
+				"数据源",
+				"数据源对比工具\t(index.ts)"
+			],
+			[
+				"for",
+				"forobj\tfor … in … loop"
+			],
+			[
+				"ali",
+				"align-items\tproperty"
+			],
+			[
+				"积木",
+				"积木token测试接口\t(接口文档.md)"
+			],
+			[
+				"fi",
+				"fail\tabc"
+			],
+			[
+				"loc",
+				"localStorage\tabc"
+			],
+			[
+				"I",
+				"Icon\talias"
+			],
+			[
+				"info",
+				"infoConfig\tabc"
+			],
+			[
+				"fl",
+				"fl\tfloat: ${1:left};"
+			],
+			[
+				"js",
+				"jsonParse\tconst"
+			],
+			[
+				"json",
+				"jsonStringify\tconst"
+			],
+			[
+				"cu",
+				"cursor\tproperty"
+			],
+			[
+				"clo",
+				"close\tabc"
+			],
+			[
+				"marg",
+				"marginLeft\tproperty"
+			],
+			[
+				"Rg",
+				"RegExp\tvar"
+			],
+			[
+				"tab",
+				"tableTextAreaRender\tconst"
+			],
+			[
+				"S",
+				"Select\tclass"
+			],
+			[
+				"Bu",
+				"BusinessSelect\tclass"
+			],
+			[
+				"BU",
+				"BusinessSelect\t(index.tsx)"
+			],
+			[
+				"p",
+				"partners/"
+			],
+			[
+				"ISt",
+				"IStore\tinterface"
+			],
+			[
+				"rc",
+				"rc\treact组件-生命周期"
+			],
+			[
+				"setT",
+				"setTimeout\t(CxyPays.class.js)"
+			],
+			[
+				"P",
+				"Promise\tvar"
+			],
+			[
+				"app",
+				"appendChild\tmethod"
+			],
+			[
+				"ap",
+				"appendChild\tmethod"
+			],
+			[
+				"payT",
+				"payTypeList\tabc"
+			],
+			[
+				"su",
+				"super\tabc"
+			],
+			[
+				"ad",
+				"admin/"
+			],
+			[
+				"ser",
+				"admin.service.ts"
+			],
+			[
+				"dt",
+				"dto/"
+			],
+			[
+				"ref",
+				"ref\tJSX attribute"
+			],
+			[
+				"doc",
+				"document\tvar"
+			],
+			[
+				"fe",
+				"fromEvent\tabc"
+			],
+			[
+				"onKey",
+				"onKeyUp\tJSX attribute"
+			],
+			[
+				"Eve",
+				"EventTarget\tvar"
+			],
+			[
+				"cla",
+				"className\tJSX attribute"
+			],
+			[
+				"operat",
+				"operators\tdirectory"
+			],
+			[
+				"fun",
+				"function\tkeyword"
+			],
+			[
+				"Ev",
+				"Event\tvar"
+			],
+			[
+				"H",
+				"HeaderMiddleware\tclass"
+			],
+			[
+				"Htt",
+				"HttpStatus\tabc"
+			],
+			[
+				"sc",
+				"schedule.jsx"
+			],
+			[
+				"de",
+				"detail_violation.jsx"
+			],
+			[
+				"v",
+				"vehicleBatch/"
+			],
+			[
+				"ren",
+				"render\tabc"
+			],
+			[
+				"vla",
+				"values\tabc"
+			],
+			[
+				"men",
+				"menuData\t(index.tsx)"
+			],
+			[
+				"impo",
+				"import\tabc"
+			],
+			[
+				"im",
+				"import\tabc"
+			],
+			[
+				"comp",
+				"components\tdirectory"
+			],
+			[
+				"TS",
+				"TStore\ttype"
+			],
+			[
+				"pr",
+				"props\tabc"
+			],
+			[
+				"col",
+				"close\t(info.tsx)"
+			],
+			[
+				"请选择",
+				"请选择开通地区\t(info.tsx)"
+			],
+			[
+				"getP",
+				"getProvinceCityList\t(city.ts)"
+			],
+			[
+				"C",
+				"Component\t(index.tsx)"
+			],
+			[
+				"bacc",
+				"background-color\tproperty"
+			],
+			[
+				"on",
+				"onCancel\tabc"
+			],
+			[
+				"Rou",
+				"RouteComponentProps\talias"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"r",
+				"Package Control: Remove Package"
+			],
+			[
+				"rm",
+				"Snippet: React: isMounted()"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"ter",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
+				"terminus",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"tev",
+				"Terminus: Open Default Shell in View"
+			],
+			[
+				"tcv",
+				"File: New File Relative to Current View"
+			],
+			[
+				"findkeyconf",
+				"FindKeyConflicts: (Direct) Conflicts to Quick Panel"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"svn",
+				"SVN: Checkout…"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remp",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"INS",
+				"Package Control: Install Package"
+			],
+			[
+				"REP",
+				"Package Control: Remove Package"
+			],
+			[
+				"INSTA",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"isnta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 314.0,
+		"history":
+		[
+			"print(\"hello world!\")",
+			"npm",
+			"lessc",
+			"less",
+			"which gocode",
+			"ls",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/dyb/Library/Application Support/Sublime Text 3/Packages/zzz A File Icon zzz/patches/general/multi/Adaptive.sublime-theme",
+		"/Users/dyb/Library/Application Support/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/Users/dyb/Desktop/B端违章代办/trunk/src/js/containers/home/index.js",
+		"/Users/dyb/Desktop/B端违章代办/trunk/src/js/containers/configuredHome/index.js",
+		"/Users/dyb/Desktop/B端违章代办/trunk/webpack-pro-config.js",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/page/selfQuery/batch/index.tsx",
+		"/Users/dyb/Desktop/nest-admin/src/pages/admin/account/index.tsx",
+		"/Users/dyb/Desktop/nest-admin/src/components/antd/select.tsx",
+		"/Users/dyb/Desktop/nest-admin/src/components/antd/s",
+		"/Users/dyb/Desktop/nest-admin/src/components/antd/menu.tsx",
+		"/Users/dyb/Desktop/nest-admin/src/components/antd/form/form.tsx",
+		"/Users/dyb/Desktop/nest-admin/src/components/antd/form/item.tsx",
+		"/Users/dyb/Desktop/nest-admin/src/components/antd/form/form_modal.tsx",
+		"/Users/dyb/Desktop/nest-admin/src/components/antd/form/create_form_item.tsx",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/page/selfQuery/index.tsx",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/page/selfQuery/batch/result.tsx",
+		"/Users/dyb/Desktop/122-view/src/pages/login/index.tsx",
+		"/Users/dyb/Desktop/122-view/src/pages/home/index.tsx",
+		"/Users/dyb/Desktop/122-view/src/store/websocket.ts",
+		"/Users/dyb/Desktop/122-view/src/App.less",
+		"/Users/dyb/Desktop/122-view/src/components/antd-mobile/form/index.tsx",
+		"/Users/dyb/Desktop/122-view/src/components/antd-mobile/form/style.less",
+		"/Users/dyb/Desktop/122-serve/src/websocket/websocket.gateway.ts",
+		"/Users/dyb/Desktop/122-view/src/pages/index.tsx",
+		"/Users/dyb/Desktop/122-view/src/App.tsx",
+		"/Users/dyb/Desktop/122-view/src/store/view.ts",
+		"/Users/dyb/Desktop/122-view/src/config/routers.ts",
+		"/Users/dyb/Desktop/122-view/src/store/index.ts",
+		"/Users/dyb/Desktop/122-serve/src/app.service.ts",
+		"/Users/dyb/Desktop/122/index.js",
+		"/Users/dyb/Desktop/培养计划.md",
+		"/Users/dyb/Desktop/122/node_modules/@types/selenium-webdriver/index.d.ts",
+		"/Users/dyb/Desktop/react-app/tsconfig.json",
+		"/Users/dyb/Desktop/122/tsconfig.json",
+		"/Users/dyb/Desktop/122/index.ts",
+		"/Users/dyb/Library/Application Support/Sublime Text 3/Packages/User/typescript.sublime-build",
+		"/Users/dyb/Desktop/122/index.py",
+		"/Users/dyb/Desktop/test.py",
+		"/Users/dyb/.bash_profile",
+		"/Users/dyb/.profile",
+		"/Users/dyb/Library/Application Support/Sublime Text 3/Packages/User/python3.sublime-build",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/page/selfQuery/batch/config.tsx",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/api/request/selfQuery.ts",
+		"/Users/dyb/Desktop/create-react-app/lib/template/pc-mobx-admin/components/custom/formPage.tsx",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/page/manageVehicle/index.tsx",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/page/selfQuery/batch/info.tsx",
+		"/Users/dyb/Desktop/npm/file/src/index.ts",
+		"/Users/dyb/Desktop/npm/file/src/style.less",
+		"/Users/dyb/Desktop/合作商系统后台/trunk/coopetarion/src/components/service/DetailData.jsx",
+		"/Users/dyb/Desktop/合作商系统后台/trunk/coopetarion/src/components/service/Detail.jsx",
+		"/Users/dyb/Desktop/合作商系统后台/trunk/coopetarion/src/components/home/Table.jsx",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/page/index.tsx",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/api/index.ts",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/page/config.ts",
+		"/Users/dyb/Desktop/B端违章代办/trunk/src/index.html",
+		"/Users/dyb/Desktop/nset-serve/src/common/tool/createValidator.ts",
+		"/Users/dyb/Desktop/nset-serve/src/common/tool/index.ts",
+		"/Users/dyb/Desktop/nset-serve/src/common/index.ts",
+		"/Users/dyb/Desktop/nset-serve/src/common/entity/account.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/common/dto.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/common/validator.ts",
+		"/Users/dyb/Desktop/nset-serve/src/common/createValidator.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/common/validatorConfig.ts",
+		"/Users/dyb/Desktop/nset-serve/src/common/tool.ts",
+		"/Users/dyb/Desktop/nset-serve/src/main.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/admin.service.ts",
+		"/Users/dyb/Desktop/nset-serve/src/common/regExp.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/common/interface.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/common/index.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/admin.controller.ts",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/component/project/index.tsx",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/api/request/index.ts",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/api/config.ts",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/page/data_source_group/info.tsx",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/component/pc/antd/index.tsx",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/component/pc/antd/checkbox.tsx",
+		"/Users/dyb/Desktop/通用调度模型管理系统/trunk/src/page/selfSearch/config.tsx",
+		"/Users/dyb/Desktop/技术评估.md",
+		"/Users/dyb/Desktop/技术评估任务.md",
+		"/Users/dyb/Desktop/react-app-mobile-mobx-tabs/src/App.tsx",
+		"/Users/dyb/Desktop/create-react-app/lib/template/pc-mobx-admin/pages/admin/account/config.tsx",
+		"/Users/dyb/Desktop/nset-serve/src/common/filters/http-exception.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/admin.module.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/common/entity.ts",
+		"/Users/dyb/Desktop/nset-serve/src/common/entity/common.ts",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/swagger/dist/interfaces/swagger-custom-options.interface.d.ts",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/swagger/dist/decorators/api-consumes.decorator.js",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/swagger/dist/interfaces/swagger-document-options.interface.d.ts",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/swagger/dist/interfaces/swagger-base-config.interface.d.ts",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/swagger/dist/explorers/api-consumes.explorer.d.ts",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/swagger/dist/swagger-module.d.ts",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/swagger/dist/swagger-explorer.js",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/swagger/dist/explorers/api-consumes.explorer.js",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/swagger/dist/explorers/api-parameters.explorer.js",
+		"/Users/dyb/Desktop/nset-serve/node_modules/swagger-ui-dist/swagger-ui-bundle.js.map",
+		"/Users/dyb/Desktop/nset-serve/node_modules/swagger-ui-dist/swagger-ui.js.map",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/common/interfaces/nest-application-options.interface.d.ts",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/common/interfaces/external/https-options.interface.d.ts",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/swagger/dist/decorators/api-model-property.decorator.d.ts",
+		"/Users/dyb/Desktop/自动化测试平台-前端/trunk/src/page/tool/jmtoken/index.tsx",
+		"/Users/dyb/Desktop/nset-serve/test/app.e2e-spec.ts",
+		"/Users/dyb/Desktop/nest-admin/src/pages/admin/account/modal.tsx",
+		"/Users/dyb/Desktop/nest-admin/src/pages/admin/account/config.tsx",
+		"/Users/dyb/Desktop/nest-admin/src/config/request.ts",
+		"/Users/dyb/Desktop/nest-admin/src/api/index.ts",
+		"/Users/dyb/Desktop/nest-admin/src/config/menuData.ts",
+		"/Users/dyb/Desktop/nest-admin/src/App.tsx",
+		"/Users/dyb/Desktop/引导步骤.md",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/core/nest-application-context.d.ts",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/common/interfaces/nest-application-context-options.interface.d.ts",
+		"/Users/dyb/Desktop/nset-serve/tsconfig.json",
+		"/Users/dyb/Desktop/nset-serve/node_modules/typeorm/browser/driver/aurora-data-api/AuroraDataApiDriver.js",
+		"/Users/dyb/Desktop/nset-serve/node_modules/typeorm/typeorm-class-transformer-shim.js",
+		"/Users/dyb/Desktop/nset-serve/node_modules/typeorm/browser/decorator/columns/CreateDateColumn.d.ts",
+		"/Users/dyb/Desktop/B端违章代办/trunk/dist/index.html",
+		"/Users/dyb/Desktop/nset-serve/src/common/common.entity.ts",
+		"/Users/dyb/Desktop/nset-serve/src/app.module.ts",
+		"/Users/dyb/Desktop/nset-serve/package.json",
+		"/Users/dyb/Desktop/nset-serve/webpack.config.js",
+		"/Users/dyb/Desktop/nset-serve/src/main.hmr.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/admin.entity.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/dto/index.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/interfaces/index.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/dto/update.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/dto/query.ts",
+		"/Users/dyb/Desktop/nset-serve/src/admin/dto/create.ts",
+		"/Users/dyb/Desktop/nset-serve/ormconfig.json",
+		"/Users/dyb/Desktop/nset-serve/node_modules/@nestjs/common/enums/http-status.enum.js"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 166.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.Terminus":
+	{
+		"height": 196.0
+	},
+	"output.Terminus 2":
+	{
+		"height": 410.0
+	},
+	"output.Terminus 3":
+	{
+		"height": 736.0
+	},
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 368.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.nodejs":
+	{
+		"height": 103.0
+	},
+	"output.sftp":
+	{
+		"height": 97.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 293.0
+	},
+	"pinned_build_system": "Packages/User/Nodejs.sublime-build",
+	"project": "package.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 248.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
