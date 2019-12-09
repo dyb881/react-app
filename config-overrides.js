@@ -57,7 +57,7 @@ module.exports = override(
       // 生产模式下的配置
       config = Merge(config, {
         output: {
-          publicPath: '.', // 引用脚本相对路径
+          publicPath: '', // 引用脚本相对路径
         },
       });
 
