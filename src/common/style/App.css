@@ -1,14 +1,15 @@
 /**
- * 统一样式处理
+ * 引入 normalize.css 样式
+ * 根据兼容范围生成对应样式
  */
 @import-normalize;
 
+/**
+ * 默认样式
+ */
 body {
   font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC',
     'WenQuanYi Micro Hei', sans-serif;
-  word-wrap: break-word;
-  line-height: 1.15;
-  color: @ra-color;
 }
 
 a {

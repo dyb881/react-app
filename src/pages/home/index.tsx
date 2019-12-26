@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { combine } from 'common';
 
-export default () => (
-  <div className="fill">
-    页面 <Link to="/user">go User</Link>
-  </div>
-);
+export default combine(({ stores }) => {
+  console.log('刷新');
+  return (
+    <div>
+      <div>{stores.view.number}</div>
+      <button onClick={stores.view.add}>add</button>
+    </div>
+  );
+});

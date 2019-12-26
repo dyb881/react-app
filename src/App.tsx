@@ -1,16 +1,19 @@
 import React from 'react';
-import { HashRouter as Router } from 'react-router-dom';
-import Pages from 'pages';
-import 'App.css'; // CSS Reset 以及默认类
-import 'App.less'; // 默认类
+import { hot } from 'react-hot-loader/root';
+import { Router, Page } from 'common/routers';
+import 'common/style'; // 默认全局样式
 
 /**
- * 状态以及路由注入
+ * Router 用于注册基础路由
+ * Page 配置路由所生成的页面
  */
-export default () => (
+const App = () => (
   <React.StrictMode>
     <Router>
-      <Pages />
+      <Page />
     </Router>
   </React.StrictMode>
 );
+
+// 热更新
+export default process.env.NODE_ENV === 'development' ? hot(App) : App;
