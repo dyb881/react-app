@@ -1,18 +1,16 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
-import { Router, Page } from 'common/routers';
+import { Router, Pages } from 'common/routers'; // 直接引用 common 会导致循环引用，build 后运行报错
 import 'common/style'; // 默认全局样式
 
 /**
  * Router 用于注册基础路由
- * Page 配置路由所生成的页面
+ * Pages 路由页面集合
  */
 const App = () => (
-  <React.StrictMode>
-    <Router>
-      <Page />
-    </Router>
-  </React.StrictMode>
+  <Router>
+    <Pages />
+  </Router>
 );
 
 // 热更新

@@ -14,15 +14,10 @@ configure({
 /**
  * 全局状态类型
  */
-export type TStores = { stores: Stores };
+type TStores = { stores: Stores };
 
 /**
- * 状态 Props
- */
-export type TStoresProps = Partial<TStores>;
-
-/**
- * 初始化状态
+ * 全局状态
  */
 export const stores = new Stores();
 
@@ -37,6 +32,11 @@ export const combine = <P extends object>(Component: React.FC<P & TStores>) => {
   const Combine: React.FC<P> = props => <Observer {...props} stores={stores} />;
   return Combine;
 };
+
+/**
+ * 状态 Props
+ */
+export type TStoresProps = Partial<TStores>;
 
 /**
  * 状态联合到组件（类装饰器）

@@ -15,7 +15,7 @@ export type TRouter = {
 };
 
 /**
- * 路由配置
+ * 路由配置数组
  */
 export type TRouters = TRouter[];
 
@@ -23,22 +23,16 @@ export type TRouters = TRouter[];
  * 路由选项
  */
 export type TRoutersOptions = {
+  app?: boolean; // 是否打包成APP，既启用app模拟跳转
+  transition?: boolean; // 开启跳转动画
   type: 'hash' | 'browser'; // 路由类型
   listen?: (router: TRouter) => void; // 路由监听
 };
 
 /**
- * 路由组件 props
- */
-export type TRouterProps = {
-  transition?: boolean; // 开启跳转动画
-  app?: boolean; // 是否打包成APP，既启用app模拟跳转
-};
-
-/**
  * 匹配路由响应监听
  */
-export const createMatch = (routers: TRouters) => (pathname: string, listen: TRoutersOptions['listen']) => {
+const createMatch = (routers: TRouters) => (pathname: string, listen: TRoutersOptions['listen']) => {
   for (const router of routers) {
     if (matchPath(pathname, { path: router.to, exact: true }) && listen) {
       // 匹配并响应对应路由配置
@@ -51,7 +45,7 @@ export const createMatch = (routers: TRouters) => (pathname: string, listen: TRo
 /**
  * 路由配置生成组件配置
  */
-export const createRouters = (routers: TRouters, { type, listen }: TRoutersOptions) => {
+const createRouters = (routers: TRouters, { type, listen, ...routersProps }: TRoutersOptions) => {
   // 路由组件配置
   const routersConfig: { [key: string]: React.ComponentType<any> } = {};
 
@@ -80,14 +74,14 @@ export const createRouters = (routers: TRouters, { type, listen }: TRoutersOptio
     type === 'hash' ? <HashRouter {...props} /> : <BrowserRouter {...props} />;
 
   /**
-   * 路由页面
+   * 路由页面集合
    */
-  const Page: React.FC<TRouterProps> = props => <Routers routers={routersConfig} {...props} />;
+  const Pages: React.FC = () => <Routers routers={routersConfig} {...routersProps} />;
 
-  return { Router, Page };
+  return { Router, Pages };
 };
 
 /**
  * 路由配置生成
  */
-export const { Router, Page } = createRouters(routers, routersOptions);
+export const { Router, Pages } = createRouters(routers, routersOptions);

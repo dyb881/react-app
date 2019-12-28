@@ -1,5 +1,6 @@
 const Merge = require('webpack-merge');
 const { override, fixBabelImports, addBabelPlugin, addLessLoader, useEslintRc } = require('customize-cra');
+const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
 
 module.exports = override(
   // 配置常用的按需加载
@@ -25,6 +26,9 @@ module.exports = override(
       '@ra-bc': '#eeeeee', // 边框色
       '@ra-bcd': '#cccccc', // 边框色-深色
       '@ra-b': '#f1f1f1', // 背景色
+    },
+    modules: {
+      getLocalIdent: getCSSModuleLocalIdent,
     },
   }),
   // 允许二次配置 eslint

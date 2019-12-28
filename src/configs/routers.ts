@@ -17,6 +17,7 @@ export const routers: TRouters = [
  * 路由选项配置
  */
 export const routersOptions: TRoutersOptions = {
+  transition: true,
   type: 'hash',
   listen: ({ title }) => {
     stores.view.setTitle(title || defaultTitle);
