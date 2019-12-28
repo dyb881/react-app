@@ -275,9 +275,16 @@ const App = () => (
 
 先使用 [mobx](https://cn.mobx.js.org) 定一个状态集合，也就是状态树，主状态下有多个子状态
 
-```mermaid
+<div class="mermaid">
 graph TB
-  A[主状态 Stores]
-  A --> B[子状态 View]
-  A --> C[子状态 User]
-```
+    A[主状态 Stores]
+    A --> B[子状态 View]
+    A --> C[子状态 User]
+</div>
+
+<script src="https://cdn.bootcss.com/mermaid/8.3.1/mermaid.min.js"></script>
+<script>
+window.onload = function() {
+  mermaid.initialize({startOnLoad: true, theme: 'forest'});
+}
+</script>
