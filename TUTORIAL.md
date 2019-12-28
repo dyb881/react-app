@@ -7,35 +7,29 @@
 
 ## 默认提供开发使用的变量和函数或组件
 
-<details>
-<summary>import {} from 'config' 引用</summary>
+### import {} from 'config' 引用
 
 - isProduction - 是否生产环境，默认判断是否 https 可自行变更，所有判断环境的地方都应该引用该值
 - params - 链接参数，http://localhost?val=1 => params = {val: 1}
 - host - 接口服务地址，会根据 isProduction 自行变动，需要配置对应的生产和测试地址，测试环境下链接参数 params.host 可强制变更 host
 - routers - 路由配置
 
-</details>
+### import {} from 'common' 引用
 
-<details>
-<summary>import {} from 'common' 引用</summary>
-
-- 请求
+- 请求 - 统一使用自带的请求器
   - baseURL - 请求器路由前缀，但是 http 开头的请求地址会忽略该前缀，一般情况下会在请求器内自动调用，无需引用
   - get, post, put, patch, del, upload - 请求器，[使用方法](https://github.com/dyb881/fetch-request)
-- 路由
+- 路由 - react-router-dom 抽象封装，主要依靠配置使用
   - TRouter - 单个路由属性
   - TRouters - 路由配置数组
   - TRoutersOptions - 路由选项配置
   - Router - 路由注入组件，根据路由选项判断使用路由类型（hash | browser）
   - Pages - 路由页面集合组件，根据路由配置数组生成，根据路由选项配置跳转动画属性
-- 状态
+- 状态 - 默认使用[mobx](https://cn.mobx.js.org/)
   - stores - 全局状态树的实例，在非组件调用的情况下直接引用
   - combine - 让函数组件和状态进行关联，并在组件的 props 注入 stores
   - TStoresProps - 类组件使用的 props
   - Combine - 让类组件和状态进行关联的装饰器，类组件的 props 需要 继承或联合 TStoresProps
-
-</details>
 
 ## 接口请求
 
@@ -183,3 +177,107 @@ const getList = async () => {
 ```
 
 </details>
+
+## 路由
+
+使用 react-router-dom + react-transition-group 封装，加入了跳转动画，正常情况下都是使用淡入淡出<br>
+可以直接使用 react-router-dom 的各种 API
+
+<details>
+<summary>创建页面</summary>
+
+在 pages 下创建页面文件，pages/home/index.tsx，默认情况下使用全局样式类 page<br>
+会以绝对定位填满当前父元素，纵向 flex 布局，并可滚动<br>
+
+```javascript
+import React from 'react';
+
+export default () => {
+  return <div className="page">Home</div>;
+};
+```
+
+在 configs/routers 文件内 的 routers 路由地址配置变量上加上你创建的页面
+
+```javascript
+/**
+ * 路由地址配置
+ */
+export const routers: TRouters = [
+  {
+    to: '/home', // 路由地址与 react-router-dom 配置规则一致
+    path: 'home', // 会执行 require('pages/home').default 引用默认导出组件
+    // 其他更多参数
+    title: '首页', // 在这里我定义了一个标题，用于路由监听时使用
+  },
+];
+```
+
+进行路由选项配置，在路由的设置上总有各种需求
+
+```javascript
+/**
+ * 路由选项
+ */
+export const routersOptions: TRoutersOptions = {
+  app: false, // 启用app模拟跳转，该模式无法识别浏览器的返回动作，请谨慎使用
+  transition: true, // 开启跳转动画，页面淡入淡出
+  type: 'hash', // 使用路由类型 HashRouter ｜ BrowserRouter
+  // 路由监听，既页面变动时执行监听
+  listen: ({ title }) => {
+    // 把当前路由的配置中的 title 取出用于设置页面标题
+    stores.view.setTitle(title || defaultTitle); // 这是状态管理的一个默认子状态
+  },
+};
+```
+
+</details>
+
+<details>
+<summary>使用路由</summary>
+
+路由配置完成后会生成两个组件，分成两个组件主要是为了更加灵活的使用<br>
+Router 其实就是 react-router-dom 中的 HashRouter ｜ BrowserRouter，根据路由选项配置 type 配置生成<br>
+在 Router 内的组件才能正常使用 react-router-dom 的 api，如 withRouter<br>
+Pages routers 路由配置集合生成的路由组件，可以理解为页面集合体，会生成当前路由匹配的组件<br>
+一般情况下会直接在 src/App.tsx 文件内直接使用路由组件<br>
+
+```javascript
+import React from 'react';
+import { Router, Pages } from 'common/routers'; // 直接引用 common 会导致循环引用，build 后运行报错
+
+/**
+ * 默认使用方法
+ */
+const App = () => (
+  <Router>
+    <Pages />
+  </Router>
+);
+
+/**
+ * Pages 外层添加布局
+ * 以及在相邻处添加浮窗
+ */
+const App = () => (
+  <Router>
+    <Layout>
+      <Pages />
+    </Layout>
+    <FloatingWindow />
+  </Router>
+);
+```
+
+</details>
+
+## 状态
+
+先使用 [mobx](https://cn.mobx.js.org) 定一个状态集合，也就是状态树，主状态下有多个子状态
+
+```mermaid
+graph TB
+  A[主状态 Stores]
+  A --> B[子状态 View]
+  A --> C[子状态 User]
+```

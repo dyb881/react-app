@@ -1,6 +1,7 @@
 # react-app
 
 降低 react 开发门槛，并规范化开发，固定的路由配置和全局状态管理，形成一个整体的开发套路<br>
+主要成员 create-react-app + typescript + react-router-dom + mobx<br>
 如果觉得上一个版本更香的话，可跳转[v1 分支](https://github.com/dyb881/react-app/tree/v1)<br>
 
 ## 学习使用

@@ -72,10 +72,23 @@
   }
 }
 
-// 页面布局 填满并加入弹性盒子
+// 页面布局 填满并加入弹性盒子,并可滚动
 .page {
   .fill;
   .box;
+  .overflow;
+}
+
+.transition {
+  transition: all 0.3s;
+}
+
+.overflow {
+  overflow: auto;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 /**

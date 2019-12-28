@@ -25,19 +25,3 @@ p {
 * {
   -webkit-overflow-scrolling: touch;
 }
-
-/**
- * 默认类
- */
-
-.transition {
-  transition: all 0.3s;
-}
-
-.overflow {
-  overflow: auto;
-}
-
-.pointer {
-  cursor: pointer;
-}
