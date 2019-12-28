@@ -17,8 +17,10 @@ npx create-react-app my-app --template typescript
 采用 [react-app-rewired](https://github.com/timarney/react-app-rewired/blob/master/README_zh.md) + [customize-cra](https://github.com/arackaf/customize-cra/blob/master/api.md) 进行二次配置<br>
 [完整配置 config-overrides.js](https://github.com/dyb881/react-app/blob/master/config-overrides.js)
 
+注！在 customize-cra@1.0.0 出正式版之前，统一引用 customize-cra@next，cra 3.3 导致配置有部分变动，加载 less 文件报错
+
 ```
-yarn add react-app-rewired customize-cra
+yarn add react-app-rewired customize-cra@next
 ```
 
 <details>
@@ -65,10 +67,10 @@ config-overrides.js 配置
 const { override, fixBabelImports } = require('customize-cra');
 
 module.exports = override(
-    // 按需加载
-    fixBabelImports('antd', { libraryDirectory: 'es', style: true }),
-    fixBabelImports('antd-mobile', { libraryDirectory: 'es', style: true }),
-    fixBabelImports('lodash', { libraryDirectory: '' })
+  // 按需加载
+  fixBabelImports('antd', { libraryDirectory: 'es', style: true }),
+  fixBabelImports('antd-mobile', { libraryDirectory: 'es', style: true }),
+  fixBabelImports('lodash', { libraryDirectory: '' })
 );
 ```
 
@@ -87,11 +89,11 @@ config-overrides.js 配置
 const { override, addLessLoader } = require('customize-cra');
 
 module.exports = override(
-    // 添加 less-loader
-    addLessLoader({
-        javascriptEnabled: true,
-        modifyVars: {}, // 全局 less 变量，会覆盖项目内同名变量，可用于主题定制
-    })
+  // 添加 less-loader
+  addLessLoader({
+    javascriptEnabled: true,
+    modifyVars: {}, // 全局 less 变量，会覆盖项目内同名变量，可用于主题定制
+  })
 );
 ```
 
@@ -120,8 +122,8 @@ config-overrides.js 配置
 const { override, useEslintRc } = require('customize-cra');
 
 module.exports = override(
-    // 允许二次配置 eslint
-    useEslintRc()
+  // 允许二次配置 eslint
+  useEslintRc()
 );
 ```
 
@@ -157,19 +159,19 @@ const Merge = require('webpack-merge');
 const { override } = require('customize-cra');
 
 module.exports = override(config => {
-    // 自定义配置
+  // 自定义配置
+  config = Merge(config, {});
+
+  if (process.env.NODE_ENV === 'production') {
+    // 生产模式下的配置
     config = Merge(config, {});
+  } else {
+    // 开发模式下的配置
+    config = Merge(config, {});
+  }
 
-    if (process.env.NODE_ENV === 'production') {
-        // 生产模式下的配置
-        config = Merge(config, {});
-    } else {
-        // 开发模式下的配置
-        config = Merge(config, {});
-    }
-
-    // 返回更改后的配置
-    return config;
+  // 返回更改后的配置
+  return config;
 });
 ```
 
@@ -198,18 +200,18 @@ const Merge = require('webpack-merge');
 const { override, addBabelPlugin } = require('customize-cra');
 
 module.exports = override(
-    // 编译热更新
-    addBabelPlugin('react-hot-loader/babel'),
-    config => {
-        if (process.env.NODE_ENV === 'production') {
-        } else {
-            // 开发模式下的配置
-            config = Merge(config, { resolve: { alias: { 'react-dom': '@hot-loader/react-dom' } } });
-        }
-
-        // 返回更改后的配置
-        return config;
+  // 编译热更新
+  addBabelPlugin('react-hot-loader/babel'),
+  config => {
+    if (process.env.NODE_ENV === 'production') {
+    } else {
+      // 开发模式下的配置
+      config = Merge(config, { resolve: { alias: { 'react-dom': '@hot-loader/react-dom' } } });
     }
+
+    // 返回更改后的配置
+    return config;
+  }
 );
 ```
 

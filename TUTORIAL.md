@@ -39,9 +39,8 @@
 
 ## 接口请求
 
-### 第一步需要完成接口请求配置，均在 configs/request 文件下完成
-
-请求器会自行引用当前文件内的配置进行初始化，控制台请求日志和响应结果处理已默认完成
+接口请求配置，均在 configs/request 文件下完成<br>
+请求器会自行引用当前文件内的配置进行初始化，控制台请求日志和响应结果处理已默认设置<br>
 
 <details>
 <summary>configs/request 配置</summary>
@@ -90,20 +89,26 @@ requestConfig = {
 响应处理配置
 
 ```javascript
-// 状态码 key 代表读取时所用的 key
-statusCodeKeys = ['code', 'status']
+/**
+ * 状态码 key 代表读取时所用的 key
+ */
+statusCodeKeys = ['code', 'status'];
 // 相当于以下代码获取响应结果的 code
 code = res.code || res.status;
 
-// 成功状态码，主要用排除法去得到错误请求
-successCodes = [0, '0']
-if(successCodes.includes(code)) {
+/**
+ * 成功状态码，主要用排除法去得到错误请求
+ */
+successCodes = [0, '0'];
+if (successCodes.includes(code)) {
   // 请求成功
 } else {
   // 请求失败
   res.error = code; // 最终的错误状态码会写入 error
 
-  // 获取错误提示
+  /**
+   * 获取错误提示
+   */
   messageKeys = ['msg', 'message'];
   // 相当于以下代码获取响应结果的错误提示信息
   res.errorText = res.msg || res.message;
@@ -114,7 +119,7 @@ res.ok = !res.errorText;
 
 // 所以做接口请求处理时一般使用 res.ok 判断
 res = await get();
-if(res.ok) {
+if (res.ok) {
 }
 ```
 
@@ -127,22 +132,54 @@ if(res.ok) {
 让接口的使用更加语义化<br>
 
 ```javascript
-import { post } from 'common';
+import { get, post, put, patch, del, upload } from 'common';
+import qs from 'qs';
 
 /**
- * 用户
+ * 订单
+ * 你们应该遇到过这种后端，时不时就跳出来修改一下返回数据结构或请求的方式
+ * 以下的写法没有统一，就是为了让接口业务代码上使用的时候达成统一，也可以减少请求的参数
  */
-export const user = {
-  login: (data: any) => post('/login', data, '登录'),
-};
-
 export const order = {
-  getList:
-  add:
-  edit:
-  del:
-  details:
-}
+  getList: ({ pageSize, pageNum, ...data }: any) => {
+    // 从容面对各种奇葩，即使接口百般修改，你的业务代码都雷打不动
+    return get(`/order/query?${qs.stringify(pageSize, pageNum)}`, data, '查询订单列表');
+  },
+  getList: (data: any) => {
+    const res = await get('/order/list', data, '查询订单列表');
+    if(res.ok) {
+      res.data = res.data.map(i => ({
+        label: i.name,
+        value: i.id,
+      }))
+    }
+    return res;
+  },
+  // http 开头的会忽略 baseUrl 的拼接
+  add: (data: any) => post('http://127.0.0.1/order/install', data, '添加订单'),
+  create: (data: any) => post('/order/install', data, '创建订单'),
+  edit: (data: any) => put('/order/update', data, '编辑订单'),
+  del: (id: any) => del(`/order/delete/${id}`, {}, '删除订单'),
+  /**
+   * 能省就省
+   * bad details({ id })
+   * good details(id)
+   */
+  details: (id: any) => get(`/order/details`, { id }, '订单详情'),
+};
+```
+
+使用时
+
+```javascript
+import { order } from 'apis';
+
+const getList = async () => {
+  const res = await order.getList(data);
+  if (res.ok) {
+    res.data;
+  }
+};
 ```
 
 </details>
