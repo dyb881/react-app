@@ -11,9 +11,4 @@ export default class View {
   @action setTitle = (title: string) => {
     window.document.title = this.title = title;
   };
-
-  @observable number = 0;
-  @action add = () => {
-    this.number++;
-  };
 }

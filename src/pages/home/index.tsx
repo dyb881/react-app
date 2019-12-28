@@ -1,14 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { combine } from 'common';
-import style from './style.module.less';
 
-export default combine(({ stores }) => {
+export default () => {
   return (
-    <div className={style.box}>
+    <div>
       Home <Link to="/user">go User</Link>
-      <div>{stores.view.number}</div>
-      <button onClick={stores.view.add}>add</button>
     </div>
   );
-});
+};
