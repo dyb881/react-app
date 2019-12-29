@@ -434,4 +434,20 @@ export default class extends React.Component<TProps> {
 }
 ```
 
+直接使用 stores，这的话，组件不会跟随 number 的变动进行变动
+
+```typescript
+import React from 'react';
+import { stores } from 'common';
+
+export default () => {
+  return (
+    <div>
+      <div>{stores.view.number}</div>
+      <button onClick={stores.view.add}>add</button>
+    </div>
+  );
+};
+```
+
 </details>
