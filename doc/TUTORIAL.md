@@ -434,7 +434,12 @@ export default class extends React.Component<TProps> {
 }
 ```
 
-直接使用 stores，这的话，组件不会跟随 number 的变动进行变动
+</details>
+
+<details>
+<summary>直接使用 stores</summary>
+
+直接引用 stores 一样可以使用，但是没有绑定关联，所以值变动的时候，组件不会同步刷新
 
 ```typescript
 import React from 'react';
