@@ -33,14 +33,25 @@
 // 间隔均分
 .between {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+}
+
+// 间隔均分 并上下居中
+.between-center {
+  .between;
+  align-items: center;
 }
 
 // 纵向排列
 .column {
   display: flex;
   align-items: stretch;
+  flex-direction: column;
+}
+
+// 纵向居中
+.column-center {
+  .center;
   flex-direction: column;
 }
 
