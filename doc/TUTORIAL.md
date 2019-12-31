@@ -207,7 +207,7 @@ export const routers: TRouters = [
   {
     to: '/home', // 路由地址与 react-router-dom 配置规则一致
     path: 'home', // 会执行 require('pages/home').default 引用默认导出组件
-    Component: <Home />; // 绑定组件，注！优先度低于 path
+    component: <Home />; // 绑定组件，注！优先度低于 path
     // 其他更多参数
     title: '首页', // 在这里我定义了一个标题，用于路由监听时使用
   },

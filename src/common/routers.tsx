@@ -11,7 +11,7 @@ import '@dyb881/router/lib/style.css';
 export type TRouter = {
   to: string; // 路由地址
   path?: string; // 绑定组件路径，默认为 /src/pages 下的文件或文件夹
-  Component?: React.ComponentType<any>; // 绑定组件
+  component?: React.ComponentType<any>; // 绑定组件，优先度低于 path
   [key: string]: any;
 };
 
@@ -51,12 +51,9 @@ const createRouters = (routers: TRouters, { type, listen, ...routersProps }: TRo
   const routersConfig: { [key: string]: React.ComponentType<any> } = {};
 
   // 引用页面并写入路由
-  routers.forEach(({ to, path, Component }) => {
-    if (path) {
-      routersConfig[to] = require('pages/' + path).default;
-    } else if (Component) {
-      routersConfig[to] = Component;
-    }
+  routers.forEach(({ to, path, component }) => {
+    if (path) routersConfig[to] = require('pages/' + path).default;
+    else if (component) routersConfig[to] = component;
   });
 
   // 创建比较方法
