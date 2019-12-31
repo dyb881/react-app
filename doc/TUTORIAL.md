@@ -456,3 +456,42 @@ export default () => {
 ```
 
 </details>
+
+<details>
+<summary>针对路由组件</summary>
+
+正常情况下，如果该组件是被路由注册为页面，props 默认会带上 路由对象<br>
+以下是正常用法<br>
+
+```typescript
+import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
+import { combine } from 'common';
+
+// 定义props类型
+type TProps = RouteComponentProps & {
+  code?: string;
+};
+
+export default combine<TProps>(({ stores, history, code }) => {
+  return <div></div>;
+});
+```
+
+快捷使用，内置 RouteComponentProps
+
+```typescript
+import React from 'react';
+import { combinePage } from 'common';
+
+// 定义props类型
+type TProps = {
+  code?: string;
+};
+
+export default combinePage<TProps>(({ stores, history, code }) => {
+  return <div></div>;
+});
+```
+
+</details>

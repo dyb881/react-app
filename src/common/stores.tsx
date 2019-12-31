@@ -1,4 +1,5 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import { configure } from 'mobx';
 import { observer } from 'mobx-react';
 import Stores from 'stores';
@@ -50,4 +51,11 @@ export const Combine = <P extends object>(Component: React.ComponentClass<P & TS
     render = () => <Observer {...this.props} stores={stores} />;
   }
   return Combine;
+};
+
+/**
+ * 在原有基础上加入路由类型定义
+ */
+export const combinePage = <P extends object>(Component: React.FC<P & TStores & RouteComponentProps>) => {
+  return combine(Component);
 };
