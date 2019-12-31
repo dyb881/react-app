@@ -1,5 +1,5 @@
 import { TFetchRequestConfig } from '@dyb881/fetch-request';
-import { isProduction, params } from './common';
+import { isProduction, params } from './public';
 
 // ------------------------------- 请求器配置 --------------------------------- //
 
