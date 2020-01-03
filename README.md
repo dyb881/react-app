@@ -47,7 +47,7 @@ yarn serve // 运行静态文件服务器，并指向 build 文件夹
   - request - 请求器初始化生成
   - routers - 路由生成
   - stores - 状态初始化，状态关联函数和状态关联装饰器生成
-  - tool - 常用类型
+  - tool - 常用工具
   - types - 常用类型
 - components - 业务组件封装（指会被多次使用或独立于页面外的组件，页面独有组件建议在页面文件夹内开发）
 - configs - 全局配置，
