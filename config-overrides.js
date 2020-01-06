@@ -1,7 +1,17 @@
 const Merge = require('webpack-merge');
-const { override, fixBabelImports, addBabelPlugin, addLessLoader, useEslintRc } = require('customize-cra');
+const {
+  override,
+  addWebpackPlugin,
+  fixBabelImports,
+  addBabelPlugin,
+  addLessLoader,
+  useEslintRc,
+} = require('customize-cra');
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 
 module.exports = override(
+  // Day.js 替换 momentjs 来大幅减小打包大小
+  addWebpackPlugin(new AntdDayjsWebpackPlugin()),
   // 配置常用的按需加载
   fixBabelImports('antd', { libraryDirectory: 'es', style: true }),
   fixBabelImports('antd-mobile', { libraryDirectory: 'es', style: true }),
