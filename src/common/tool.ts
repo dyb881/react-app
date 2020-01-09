@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * 选项值
  */
@@ -26,4 +28,11 @@ export const toOptions = (options: TOptions) => {
     if (typeof option === 'object') return option;
     return { label: option, value: isArray ? +k : k };
   });
+};
+
+/**
+ * 判断是否有效 react 组件
+ */
+export const isElement = (e: any): e is JSX.Element => {
+  return React.isValidElement(e);
 };
