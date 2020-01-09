@@ -36,3 +36,13 @@ export const toOptions = (options: TOptions) => {
 export const isElement = (e: any): e is JSX.Element => {
   return React.isValidElement(e);
 };
+
+/**
+ * 仿 class state 的 hooks
+ * 新状态会合并到原状态
+ */
+export const useStates = <T extends any>(defaultStates: T) => {
+  const reducer = (states: T, newStates: Partial<T> & { [key: string]: any }) => ({ ...states, ...newStates });
+  const [states, dispatch] = React.useReducer(reducer, defaultStates);
+  return { states, dispatch };
+};
