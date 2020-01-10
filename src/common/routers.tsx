@@ -34,8 +34,10 @@ export type TRoutersOptions = {
  * 匹配路由响应监听
  */
 const createMatch = (routers: TRouters) => (pathname: string, listen: TRoutersOptions['listen']) => {
+  if(!listen) return;
+
   for (const router of routers) {
-    if (matchPath(pathname, { path: router.to, exact: true }) && listen) {
+    if (matchPath(pathname, { path: router.to, exact: true })) {
       // 匹配并响应对应路由配置
       listen(router);
       break;

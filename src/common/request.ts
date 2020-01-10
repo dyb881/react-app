@@ -16,7 +16,7 @@ export const { baseURL, get, post, put, patch, del, upload } = new FetchReques({
   interceptorsResponse: (res, config) => {
     if (!res.errorText && config.responseType === 'json') {
       // 获取匹配的 code
-      const code = statusCodeKeys.reduce((code, key) => (res[key] === undefined ? code : res[key]), undefined);
+      const code = statusCodeKeys.reduce((code, key) => res[key] ?? code, undefined);
       // 当 code 匹配成功状态码失败，既是请求失败
       if (!successCodes.includes(code!)) {
         res.error = code;
