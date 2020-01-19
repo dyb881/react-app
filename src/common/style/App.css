@@ -8,8 +8,8 @@
  * 默认样式
  */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
-    'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 a {
@@ -24,4 +24,11 @@ p {
 
 * {
   -webkit-overflow-scrolling: touch;
+}
+
+/**
+ * 处理 antd 样式 bug
+ */
+.ant-btn {
+  line-height: 1.5715;
 }
