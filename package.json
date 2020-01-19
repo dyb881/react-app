@@ -32,12 +32,11 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build": "PUBLIC_URL=. react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
     "start:https": "HTTPS=true yarn start",
-    "build:test": "PUBLIC_URL=. yarn build",
-    "build:production": "PUBLIC_URL=. GENERATE_SOURCEMAP=false yarn build",
+    "build:production": "GENERATE_SOURCEMAP=false yarn build",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "serve": "serve -s build"
   },

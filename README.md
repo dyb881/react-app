@@ -16,7 +16,6 @@
 yarn start // 运行开发环境
 yarn build // 打包代码
 yarn start:https // 运行 https 的开发环境
-yarn build:test // 打包测试环境，一般情况下需要修改资源地址
 yarn build:production // 打包不产生映射文件的代码
 yarn analyze // 分析包的大小
 yarn serve // 运行静态文件服务器，并指向 build 文件夹

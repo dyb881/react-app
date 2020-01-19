@@ -298,9 +298,9 @@ npm i -g source-map-explorer serve
 {
   "scripts": {
     ...,
+    "build": "PUBLIC_URL=. yarn build", // 打包测试环境，一般情况下需要修改资源地址
     "start:https": "HTTPS=true yarn start", // 运行 https 的开发环境
-    "build:test": "PUBLIC_URL=. yarn build", // 打包测试环境，一般情况下需要修改资源地址
-    "build:production": "GENERATE_SOURCEMAP=false yarn build:test", // 在生产环境中一般不产生映射文件
+    "build:production": "GENERATE_SOURCEMAP=false yarn build", // 在生产环境中一般不产生映射文件
     "analyze": "source-map-explorer 'build/static/js/*.js'", // 分析包的大小
     "serve": "serve -s build" // 运行静态文件服务器，并指向 build 文件夹
   },
