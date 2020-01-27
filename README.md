@@ -9,6 +9,7 @@
 - [react 的基础知识和常用包](https://github.com/dyb881/recommended)
 - [环境配置](https://github.com/dyb881/react-app/blob/master/doc/SETTING.md)（可选）
 - [使用教程](https://github.com/dyb881/react-app/blob/master/doc/TUTORIAL.md)
+- [业务开发模版](https://github.com/dyb881/create-react-app)
 
 ## 使用方法
 
