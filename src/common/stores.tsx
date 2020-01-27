@@ -43,7 +43,7 @@ export type TStoresProps = Partial<TStores>;
  * 状态联合到组件（类装饰器）
  * 使用后状态变更时会刷新两次组件，build 后就不会有这情况了，可放心开发
  */
-export const Combine = <P extends object>(Component: React.ComponentClass<P & TStoresProps>) => {
+export const Combine = <P extends object = {}>(Component: React.ComponentClass<P & TStoresProps>) => {
   // 生成观察者组件
   const Observer = observer(Component);
   // 注入全局状态
@@ -56,6 +56,8 @@ export const Combine = <P extends object>(Component: React.ComponentClass<P & TS
 /**
  * 在原有基础上加入路由类型定义
  */
-export const combinePage = <P extends object>(Component: React.FC<P & TStores & RouteComponentProps>) => {
+export const combinePage = <Params extends object, P extends object = {}>(
+  Component: React.FC<P & TStores & RouteComponentProps<Params>>
+) => {
   return combine(Component);
 };

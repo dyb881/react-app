@@ -41,8 +41,8 @@ export const isElement = (e: any): e is JSX.Element => {
  * 仿 class state 的 hooks
  * 新状态会合并到原状态
  */
-export const useStates = (defaultStates: any) => {
-  const reducer = (states: any, newStates: any) => ({ ...states, ...newStates });
+export const useStates = <T extends any>(defaultStates: T) => {
+  const reducer = (states: T, newStates: Partial<T> & { [key: string]: any }) => ({ ...states, ...newStates });
   const [states, setStates] = React.useReducer(reducer, defaultStates);
   return { states, setStates };
 };
