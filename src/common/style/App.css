@@ -25,10 +25,3 @@ p {
 * {
   -webkit-overflow-scrolling: touch;
 }
-
-/**
- * 处理 antd 样式 bug
- */
-.ant-btn {
-  line-height: 1.5715;
-}
