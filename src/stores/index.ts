@@ -8,10 +8,10 @@ export default class Stores {
   /**
    * 状态初始化
    */
-  constructor() {
-    // 默认为登录状态
-    this.user.onLogin(true);
-  }
+  // constructor() {
+  //   // 默认为登录状态
+  //   this.user.onLogin(true);
+  // }
 
   /**
    * 视图

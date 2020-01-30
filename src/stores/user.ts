@@ -7,7 +7,7 @@ export default class User {
   /**
    * 是否登录
    */
-  @observable isLogin: boolean = false;
+  @observable isLogin = false;
 
   /**
    * 登陆状态监听

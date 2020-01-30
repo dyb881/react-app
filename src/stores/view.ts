@@ -7,7 +7,7 @@ export default class View {
   /**
    * 页面标题
    */
-  @observable title: string = window.document.title;
+  @observable title = window.document.title;
   @action setTitle = (title: string) => {
     window.document.title = this.title = title;
   };
