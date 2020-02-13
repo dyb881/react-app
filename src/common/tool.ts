@@ -1,21 +1,5 @@
 import React from 'react';
-
-/**
- * 选项值
- */
-export type TOption<T = any> = { value: T; label: React.ReactNode };
-
-/**
- * 可被转为选项值
- */
-export type TOptions<T = TOption> = T[] | (string | number)[] | object;
-
-/**
- * 选项值 Props
- */
-export type TOptionsProps<T = TOption> = {
-  options?: TOptions<T>;
-};
+import { TOptions } from './types';
 
 /**
  * 转为选项值

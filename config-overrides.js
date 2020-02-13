@@ -25,7 +25,7 @@ module.exports = override(
     modifyVars: {
       '@ra-p': '#1890ff', // 全局主色
       '@ra-s': '#52c41a', // 成功色
-      '@ra-w': ' #faad14', // 警告色
+      '@ra-w': '#faad14', // 警告色
       '@ra-e': '#f5222d', // 错误色
       '@ra-fs': '14px', // 主字号
       '@ra-c': 'rgba(0, 0, 0, 0.85)', // 主文本色
