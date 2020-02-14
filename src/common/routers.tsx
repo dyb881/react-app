@@ -34,7 +34,7 @@ export type TRoutersOptions = {
  * 匹配路由响应监听
  */
 const createMatch = (routers: TRouters) => (pathname: string, listen: TRoutersOptions['listen']) => {
-  if(!listen) return;
+  if (!listen) return;
 
   for (const router of routers) {
     if (matchPath(pathname, { path: router.to, exact: true })) {
@@ -82,10 +82,10 @@ const createRouters = (routers: TRouters, { type, listen, ...routersProps }: TRo
    */
   const Pages: React.FC = () => <Routers routers={routersConfig} {...routersProps} />;
 
-  return { Router, Pages };
+  return { history, Router, Pages };
 };
 
 /**
  * 路由配置生成
  */
-export const { Router, Pages } = createRouters(routers, routersOptions);
+export const { history, Router, Pages } = createRouters(routers, routersOptions);
