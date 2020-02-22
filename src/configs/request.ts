@@ -35,7 +35,7 @@ export const requestConfig: TFetchRequestConfig = {
  * 状态码 key
  * 返回结果中，用于匹配状态码的 key
  */
-export const statusCodeKeys = ['code', 'status'];
+export const statusCodeKeys = ['status', 'code'];
 
 /**
  * 成功状态码

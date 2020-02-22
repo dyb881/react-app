@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * 输入文本框
  */
@@ -27,3 +29,13 @@ export type TOptions<T = TOption> = T[] | (string | number)[] | object;
 export type TOptionsProps<T = TOption> = {
   options?: TOptions<T>;
 };
+
+/**
+ * 原生 HTML 标签属性
+ */
+export type THTMLAttr<T = HTMLElement> = React.HTMLAttributes<T>;
+
+/**
+ * 原生 HTML 标签 Props
+ */
+export type THTMLProps<T = HTMLElement> = React.FC<THTMLAttr<T>>;
