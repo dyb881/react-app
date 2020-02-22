@@ -2,13 +2,12 @@
 
 降低 react 开发门槛，并规范化开发，固定的路由配置和全局状态管理，形成一个整体的开发套路<br>
 主要成员 create-react-app + typescript + react-router-dom + mobx<br>
-如果觉得上一个版本更香的话，可跳转[v1 分支](https://github.com/dyb881/react-app/tree/v1)<br>
 
 ## 学习使用
 
 - [react 的基础知识和常用包](https://github.com/dyb881/recommended)
-- [环境配置](https://github.com/dyb881/react-app/blob/master/doc/SETTING.md)（可选）
-- [使用教程](https://github.com/dyb881/react-app/blob/master/doc/TUTORIAL.md)
+- [环境配置](https://www.yuque.com/xiangbudaowojingran/web/vx6qpl)
+- [使用教程](https://www.yuque.com/xiangbudaowojingran/web/dqq25f)
 - [业务开发模版](https://github.com/dyb881/create-react-app)
 
 ## 使用方法
@@ -57,5 +56,6 @@ yarn serve // 运行静态文件服务器，并指向 build 文件夹
 - images - 项目存放图片的地方
 - pages - 页面（一般情况下项目以页面为单位创建文件夹，然后在 configs/routers 中配置即可）
 - stores - 状态树定义（主状态下有多个子状态，主状态的构造函数执行状态初始化）
+- utils - 自定义工具和第三方 sdk 集合
 - App.tsx - 页面入口，除了布局组件的插入，一般不会变动
 - react-app-env.d.ts - 全局类型声明
