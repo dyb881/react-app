@@ -6,12 +6,12 @@ import { isProduction, params } from './public';
 /**
  * 生产地址
  */
-export let host = 'https://www.test.com';
+export let host = 'http://localhost';
 
 /**
  * 测试地址
  */
-const hostTest = 'http://www.test.com';
+const hostTest = 'http://localhost';
 
 /**
  * 会根据 isProduction 自行变动，需要配置对应的生产和测试地址
