@@ -1,4 +1,4 @@
-import { TRouters, TRoutersOptions } from '../routers';
+import { TRouters, TRoutersOptions } from './';
 import { stores } from '../stores';
 
 /**
