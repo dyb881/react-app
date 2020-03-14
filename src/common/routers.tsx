@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { matchPath, HashRouter, HashRouterProps, BrowserRouter, BrowserRouterProps } from 'react-router-dom';
 import { createHashHistory, createBrowserHistory } from 'history';
-import { routers, routersOptions } from 'configs/routers';
+import { routers, routersOptions } from './configs';
 import Routers from '@dyb881/router';
 import '@dyb881/router/lib/style.css';
 
@@ -31,61 +31,49 @@ export type TRoutersOptions = {
 };
 
 /**
+ * 路由组件
+ */
+const routersComponents: { [key: string]: React.ComponentType<any> } = {};
+
+// 引用页面并写入路由
+routers.forEach(({ to, path, component }) => {
+  if (path) routersComponents[to] = require('pages/' + path).default;
+  else if (component) routersComponents[to] = component;
+});
+
+const { type, listen, ...routersProps } = routersOptions;
+
+/**
+ * 路由类型
+ */
+export const history = type === 'hash' ? createHashHistory() : createBrowserHistory();
+
+/**
  * 匹配路由响应监听
  */
-const createMatch = (routers: TRouters) => (pathname: string, listen: TRoutersOptions['listen']) => {
-  if (!listen) return;
-
+const match = (pathname = history.location.pathname) => {
   for (const router of routers) {
     if (matchPath(pathname, { path: router.to, exact: true })) {
-      // 匹配并响应对应路由配置
-      listen(router);
+      listen?.(router); // 匹配并响应对应路由配置
       break;
     }
   }
 };
 
 /**
- * 路由配置生成组件配置
+ * 路由注入
  */
-const createRouters = (routers: TRouters, { type, listen, ...routersProps }: TRoutersOptions) => {
-  // 路由组件配置
-  const routersConfig: { [key: string]: React.ComponentType<any> } = {};
+export const Router: React.FC<HashRouterProps & BrowserRouterProps> = props => {
+  useEffect(() => {
+    if (!listen) return;
+    match(); // 初次匹配
+    history.listen(({ pathname }) => match(pathname)); // 监听地址变动
+  }, []);
 
-  // 引用页面并写入路由
-  routers.forEach(({ to, path, component }) => {
-    if (path) routersConfig[to] = require('pages/' + path).default;
-    else if (component) routersConfig[to] = component;
-  });
-
-  // 创建比较方法
-  const match = createMatch(routers);
-  // 创建路由
-  const history = type === 'hash' ? createHashHistory() : createBrowserHistory();
-
-  // 初次匹配
-  match(history.location.pathname, listen);
-
-  // 监听地址变动
-  history.listen(({ pathname }) => {
-    match(pathname, listen);
-  });
-
-  /**
-   * 路由注入
-   */
-  const Router: React.FC<HashRouterProps & BrowserRouterProps> = props =>
-    type === 'hash' ? <HashRouter {...props} /> : <BrowserRouter {...props} />;
-
-  /**
-   * 路由页面集合
-   */
-  const Pages: React.FC = () => <Routers routers={routersConfig} {...routersProps} />;
-
-  return { history, Router, Pages };
+  return type === 'hash' ? <HashRouter {...props} /> : <BrowserRouter {...props} />;
 };
 
 /**
- * 路由配置生成
+ * 路由页面集合
  */
-export const { history, Router, Pages } = createRouters(routers, routersOptions);
+export const Pages: React.FC = () => <Routers routers={routersComponents} {...routersProps} />;

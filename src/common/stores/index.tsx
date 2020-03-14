@@ -2,7 +2,7 @@ import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { configure } from 'mobx';
 import { observer } from 'mobx-react';
-import Stores from 'stores';
+import Stores from './root';
 
 /**
  * 全局设置
@@ -16,6 +16,11 @@ configure({
  * 全局状态类型
  */
 type TStores = { stores: Stores };
+
+/**
+ * 状态 Props
+ */
+export type TStoresProps = Partial<TStores>;
 
 /**
  * 全局状态
@@ -33,11 +38,6 @@ export const combine = <P extends object>(Component: React.FC<P & TStores>) => {
   const Combine: React.FC<P> = props => <Observer {...props} stores={stores} />;
   return Combine;
 };
-
-/**
- * 状态 Props
- */
-export type TStoresProps = Partial<TStores>;
 
 /**
  * 状态联合到组件（类装饰器）

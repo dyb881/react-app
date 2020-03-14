@@ -1,4 +1,5 @@
-import { TRouters, TRoutersOptions, stores } from 'common';
+import { TRouters, TRoutersOptions } from '../routers';
+import { stores } from '../stores';
 
 /**
  * 默认标题

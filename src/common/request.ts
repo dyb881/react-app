@@ -1,5 +1,5 @@
 import FetchReques, { log } from '@dyb881/fetch-request';
-import { requestConfig, statusCodeKeys, successCodes, messageKeys } from 'configs';
+import { requestConfig, statusCodeKeys, successCodes, messageKeys } from './configs';
 
 const { interceptorsRequest, interceptorsResponse, ...config } = requestConfig;
 
