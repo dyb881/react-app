@@ -4,7 +4,7 @@ import { stores } from '../stores';
 /**
  * 默认标题
  */
-const defaultTitle = '项目名';
+export const defaultTitle = '项目名';
 
 /**
  * 路由地址配置
