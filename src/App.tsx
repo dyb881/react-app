@@ -1,6 +1,6 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
-import { Router, Pages } from 'common'; // 直接引用 common 会导致循环引用，build 后运行报错
+import { Router, Pages } from 'common';
 
 /**
  * Router 用于注册基础路由

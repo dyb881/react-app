@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { matchPath, HashRouter, HashRouterProps, BrowserRouter, BrowserRouterProps } from 'react-router-dom';
 import { createHashHistory, createBrowserHistory } from 'history';
-import { routers, routersOptions } from './configs';
+import { routers, routersOptions } from './config';
 import Routers from '@dyb881/router';
 import '@dyb881/router/lib/style.css';
+export * from './config';
 
 /**
  * 单个路由属性
@@ -61,6 +62,11 @@ const match = (pathname = history.location.pathname) => {
 };
 
 /**
+ * 路由页面集合
+ */
+export const Pages: React.FC = () => <Routers routers={routersComponents} {...routersProps} />;
+
+/**
  * 路由注入
  */
 export const Router: React.FC<HashRouterProps & BrowserRouterProps> = props => {
@@ -72,8 +78,3 @@ export const Router: React.FC<HashRouterProps & BrowserRouterProps> = props => {
 
   return type === 'hash' ? <HashRouter {...props} /> : <BrowserRouter {...props} />;
 };
-
-/**
- * 路由页面集合
- */
-export const Pages: React.FC = () => <Routers routers={routersComponents} {...routersProps} />;
