@@ -36,7 +36,7 @@
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
     "start:https": "HTTPS=true yarn start",
-    "build:production": "GENERATE_SOURCEMAP=false yarn build",
+    "build:production": "PUBLIC_URL=. GENERATE_SOURCEMAP=false react-app-rewired build",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "serve": "serve -s build"
   },
