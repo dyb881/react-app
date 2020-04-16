@@ -52,6 +52,11 @@
         Loading...
       </div>
     </div>
-    <!-- <script src="https://cdn.bootcss.com/eruda/1.4.4/eruda.min.js" onload="eruda.init()"></script> -->
+    <script>
+        window.location.protocol === 'https:' ||
+        document.write(
+          '<script src="https://cdn.bootcss.com/eruda/2.2.1/eruda.js" onload="eruda.init()"><\/script>'
+        );
+    </script>
   </body>
 </html>
