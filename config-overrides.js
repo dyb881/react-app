@@ -40,8 +40,11 @@ module.exports = override(
   // 允许二次配置 eslint
   useEslintRc(),
   // 自定义配置
-  config => {
+  (config) => {
     if (process.env.NODE_ENV === 'production') {
+      // 图片编译后文件名统一不可读，允许在开发环境中引用中文名图片
+      // config.module.rules[2].oneOf[0].options.name = '[hash].[ext]';
+
       // 全局删除 console
       if (process.env.GENERATE_SOURCEMAP === 'false') {
         config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true;
