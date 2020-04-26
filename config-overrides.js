@@ -43,7 +43,8 @@ module.exports = override(
   (config) => {
     if (process.env.NODE_ENV === 'production') {
       // 图片编译后文件名统一不可读，允许在开发环境中引用中文名图片
-      // config.module.rules[2].oneOf[0].options.name = '[hash].[ext]';
+      // config.module.rules[2].oneOf[0].options.limit = 0;
+      // config.module.rules[2].oneOf[0].options.name = 'static/media/[hash].[ext]';
 
       // 全局删除 console
       if (process.env.GENERATE_SOURCEMAP === 'false') {
