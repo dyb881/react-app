@@ -31,7 +31,7 @@ const hostTest = 'http://localhost';
  * 测试环境下链接参数 params.host 可强制变更 host
  */
 if (!isProduction) {
-  host = params.host || hostTest;
+  host = (params.host as string) || hostTest;
 }
 
 /**
