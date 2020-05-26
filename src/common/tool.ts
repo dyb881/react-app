@@ -7,7 +7,7 @@ import { TOptions } from './types';
  */
 export const toOptions = (options: TOptions) => {
   const isArray = Array.isArray(options);
-  return Object.keys(options).map(k => {
+  return Object.keys(options).map((k) => {
     const option = (options as any)[k];
     if (typeof option === 'object') return option;
     return { label: option, value: isArray ? +k : k };
@@ -25,7 +25,7 @@ export const isElement = (e: any): e is JSX.Element => {
  * 仿 class state 的 hooks
  * 新状态会合并到原状态
  */
-export const useStates = <T extends any>(defaultStates: T) => {
+export const useStates = <T extends object>(defaultStates: T) => {
   const reducer = (states: T, newStates: Partial<T> & { [key: string]: any }) => ({ ...states, ...newStates });
   const [states, setStates] = React.useReducer(reducer, defaultStates);
   return { states, setStates };
