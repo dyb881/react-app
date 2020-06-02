@@ -4,8 +4,8 @@ import style from './style.module.less';
 
 export default () => {
   return (
-    <div className={`page ${style.box}`}>
-         Home <Link to="/user">go User</Link>
+    <div className={`page ${style.page}`}>
+      Home <Link to="/user">go User</Link>
     </div>
   );
 };
