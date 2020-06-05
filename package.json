@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@dyb881/fetch-request": "^0.4.3",
-    "@dyb881/router": "^1.1.1",
+    "@dyb881/router": "^1.1.2",
     "@hot-loader/react-dom": "^16.13.0",
     "@testing-library/jest-dom": "^5.9.0",
     "@testing-library/react": "^10.2.0",
