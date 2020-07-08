@@ -1,4 +1,4 @@
-const Merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const {
   override,
   addWebpackPlugin,
@@ -54,7 +54,7 @@ module.exports = override(
       }
     } else {
       // 开发模式下的配置
-      config = Merge(config, { resolve: { alias: { 'react-dom': '@hot-loader/react-dom' } } });
+      config = merge(config, { resolve: { alias: { 'react-dom': '@hot-loader/react-dom' } } });
     }
 
     // 打印运行配置
