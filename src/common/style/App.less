@@ -137,3 +137,20 @@
 .disabled {
   color: @ra-dc;
 }
+
+/**
+ * 小文本上下剧中
+ * 兼容安卓机型
+ */
+.fontContent {
+  display: table;
+  text-align: center;
+  font-size: 2em;
+
+  & > * {
+    display: table-cell;
+    vertical-align: middle;
+    transform: scale(0.5);
+    white-space: nowrap;
+  }
+}
