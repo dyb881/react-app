@@ -46,3 +46,15 @@ export const getCookies = (names: string[]) =>
     o[o.length] = getCookie(i)!;
     return o;
   }, []);
+
+/**
+ * 写入 cookie
+ * expiredays 过期时间/ms
+ */
+export const setCookie = (name: string, value: string, expiredays = 0, domain?: string) => {
+  var exdate = new Date();
+  exdate.setTime(+exdate + expiredays);
+  document.cookie = `${name}=${escape(value)}${expiredays ? `;expires=${(exdate as any).toGMTString()}` : ''}${
+    domain ? `;domain=${domain}` : ''
+  }`;
+};
