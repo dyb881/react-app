@@ -55,6 +55,6 @@ export const setCookie = (name: string, value: string, expiredays = 0, domain?: 
   var exdate = new Date();
   exdate.setTime(+exdate + expiredays);
   document.cookie = `${name}=${escape(value)}${expiredays ? `;expires=${(exdate as any).toGMTString()}` : ''}${
-    domain ? `;domain=${domain}` : ''
+    domain ? `;path=/;domain=${domain}` : ''
   }`;
 };

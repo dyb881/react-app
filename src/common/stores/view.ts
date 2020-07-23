@@ -10,5 +10,8 @@ export default class View {
   @observable title = window.document.title;
   @action setTitle = (title: string) => {
     window.document.title = this.title = title;
+    if (window.AlipayJSBridge) {
+      window.AlipayJSBridge.call('setTitle', { title });
+    }
   };
 }
