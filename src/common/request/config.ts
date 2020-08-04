@@ -12,7 +12,7 @@ export const isProduction = protocol === 'https:';
  * 链接参数
  * http://localhost?val=1 => params = {val: 1}
  */
-export const params = qs.parse(search.slice(1));
+export const params: any = qs.parse(search.slice(1));
 
 // ------------------------------- 请求器配置 --------------------------------- //
 
