@@ -14,13 +14,22 @@
   '@ra-b': '#f1f1f1', // 背景色
 */
 
-// 填满
-.fill {
-  position: absolute;
+.fill() {
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+// 填满
+.fill {
+  position: absolute;
+  .fill();
+}
+
+.fill-fixed {
+  position: fixed;
+  .fill();
 }
 
 // 上下对其

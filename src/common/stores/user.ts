@@ -16,7 +16,7 @@ export default class User {
     if (typeof bind === 'boolean') {
       this.isLogin = bind;
     } else {
-      when(() => this.isLogin, bind);
+      return when(() => this.isLogin, bind);
     }
   };
 }
