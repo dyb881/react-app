@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { TOptions } from './types';
 
 /**
@@ -29,4 +29,17 @@ export const useStates = <T extends object>(defaultStates: T) => {
   const reducer = (states: T, newStates: Partial<T> & { [key: string]: any }) => ({ ...states, ...newStates });
   const [states, setStates] = React.useReducer(reducer, defaultStates);
   return { states, setStates };
+};
+
+/**
+ * 弹窗 hooks
+ */
+export const useModal = (defaultVisible?: boolean) => {
+  const [visible, setVisible] = useState(defaultVisible || false);
+
+  const show = useCallback(() => setVisible(true), []);
+  const hide = useCallback(() => setVisible(false), []);
+  const modalProps = { visible, onClose: hide };
+
+  return { show, hide, visible, modalProps };
 };
