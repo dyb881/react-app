@@ -39,7 +39,8 @@ export const useModal = (defaultVisible?: boolean) => {
 
   const show = useCallback(() => setVisible(true), []);
   const hide = useCallback(() => setVisible(false), []);
+  const switchs = useCallback(() => setVisible((visible) => !visible), []);
   const modalProps = { visible, onClose: hide };
 
-  return { show, hide, visible, modalProps };
+  return { show, hide, switchs, visible, modalProps };
 };
