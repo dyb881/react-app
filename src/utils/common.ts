@@ -58,3 +58,12 @@ export const setCookie = (name: string, value: string, expiredays = 0, domain?: 
     domain ? `;path=/;domain=${domain}` : ''
   }`;
 };
+
+/**
+ * 批量写入 cookies
+ */
+export const setCookies = (data: any, expiredays = 0, domain?: string) => {
+  Object.keys(data).forEach((name) => {
+    setCookie(name, data[name], expiredays, domain);
+  });
+};
