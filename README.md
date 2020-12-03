@@ -1,3 +1,5 @@
+# ！！停止更新！已迁移到[cra-template-seasoning](https://github.com/dyb881/cra-template-seasoning)
+
 # react-app
 
 降低 react 开发门槛，并规范化开发，固定的路由配置和全局状态管理，形成一个整体的开发套路<br>
